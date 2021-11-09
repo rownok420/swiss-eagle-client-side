@@ -1,0 +1,9 @@
+.text{
+    color: #061a3a;
+}
+
+@media only screen and (max-width: 767px) {
+    .notFound-img{
+        width: 100% !important;
+    }
+}

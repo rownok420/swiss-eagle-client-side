@@ -1,0 +1,31 @@
+.logo{
+    height: 45px;
+}
+
+.nav-style{
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    padding: 25px 0px;
+}
+
+nav a, .name-style {
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Libre Baskerville', serif;
+    transition: .2s;
+
+}
+
+nav a:hover{
+    color: #FF3614;
+}
+
+.login-btn{
+    background-color: rgb(244, 199, 11);
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    font-weight: 500;
+}
