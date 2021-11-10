@@ -36,9 +36,6 @@ const Header = () => {
                         <NavLink activeStyle={activeStyle} to="/about">
                             About us
                         </NavLink>
-                        <NavLink activeStyle={activeStyle} to="/contact">
-                            Contact us
-                        </NavLink>
                         <NavLink activeStyle={activeStyle} to="/explore">
                             Explore
                         </NavLink>

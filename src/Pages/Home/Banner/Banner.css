@@ -33,9 +33,9 @@
 }
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     .banner-heading{
-        font-size: 45px;
+        font-size: 46px;
         
     }
 }

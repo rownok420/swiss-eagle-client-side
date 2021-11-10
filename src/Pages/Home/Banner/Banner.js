@@ -8,10 +8,10 @@ const Banner = () => {
         <div className="bg-img">
             <div className='container'>
                 <h1 className="banner-heading">
-                   The Watch Everyone Desire! <br /> Build for Men an Extraordinary Classic
+                   The Watch Everyone Can Desire! <br /> with Extraordinary Classic
                 </h1>
                 <p className="text-white py-3">
-                    This is The best in class effective classes from the luxury brand swiss eagle high-quality <br /> watches into which a lot of care has gone in.
+                    This is The best in class effective classes from the luxury brand swiss eagle high-quality watches.
                 </p>
                 <Link to="/about">
                     <button className="home-button">
