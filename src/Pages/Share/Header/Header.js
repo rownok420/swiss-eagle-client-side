@@ -2,10 +2,11 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-import logo from '../../../images/logo.png'
+import logo from "../../../images/logo.png";
+import useAuth from "../../../Hooks/useAuth";
 
 const Header = () => {
-    // const { user, logOut } = useAuth();
+    const { user, logOut } = useAuth();
     const activeStyle = {
         fontWeight: "bold",
         color: "#FF3614",
@@ -44,7 +45,7 @@ const Header = () => {
                         </NavLink>
                     </Nav>
 
-                    {/* {user.email ? (
+                    {user.email ? (
                         <div>
                             <NavLink to="/register">
                                 <button
@@ -65,23 +66,16 @@ const Header = () => {
                         </div>
                     )}
 
-                    {user?.photoURL && (
-                        <Navbar.Brand style={{marginRight: "0px"}}>
-                            <img
-                                src={user?.photoURL}
-                                width="35"
-                                height="35"
-                                className="d-inline-block align-top rounded-circle"
-                                alt=""
-                            />
+                    {user?.email && (
+                        <Navbar.Brand className="py-0">
+                            <h6
+                                style={{ color: "#FF3614" }}
+                                className="name-style"
+                            >
+                                {user?.displayName?.split(" ")[0]}
+                            </h6>
                         </Navbar.Brand>
                     )}
-
-                    {user?.email && (
-                        <Navbar.Brand className="name-style py-0 text-white">
-                            <h6>{user?.email.substring(0, user.email.lastIndexOf("@"))}</h6>
-                        </Navbar.Brand>
-                    )} */}
                 </Navbar.Collapse>
             </Container>
         </Navbar>

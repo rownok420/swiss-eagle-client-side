@@ -8,34 +8,46 @@ import NotFound from "./Pages/NotFound/NotFound";
 import About from "./Pages/About/About";
 import Explore from "./Pages/Explore/Explore";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import Register from "./Pages/Login/Register/Register";
+import Login from "./Pages/Login/Login/Login";
+import AuthProvider from "./Context/AuthProvider";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 
 function App() {
     return (
         <div className="App">
-            <Router>
-                <Header />
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route exact path="/home">
-                        <Home />
-                    </Route>
-                    <Route exact path="/about">
-                        <About />
-                    </Route>
-                    <Route exact path="/explore">
-                        <Explore />
-                    </Route>
-                    <Route path="/dashboard">
-                        <Dashboard />
-                    </Route>
-                    <Route exact path="*">
-                        <NotFound />
-                    </Route>
-                </Switch>
-                {/* <Footer /> */}
-            </Router>
+            <AuthProvider>
+                <Router>
+                    <Header />
+                    <Switch>
+                        <Route exact path="/">
+                            <Home />
+                        </Route>
+                        <Route exact path="/home">
+                            <Home />
+                        </Route>
+                        <Route exact path="/about">
+                            <About />
+                        </Route>
+                        <Route exact path="/explore">
+                            <Explore />
+                        </Route>
+                        <PrivateRoute path="/dashboard">
+                            <Dashboard />
+                        </PrivateRoute>
+                        <Route exact path="/register">
+                            <Register />
+                        </Route>
+                        <Route exact path="/login">
+                            <Login />
+                        </Route>
+                        <Route exact path="*">
+                            <NotFound />
+                        </Route>
+                    </Switch>
+                    {/* <Footer /> */}
+                </Router>
+            </AuthProvider>
         </div>
     );
 }
