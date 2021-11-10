@@ -53,7 +53,7 @@ function App() {
                             <NotFound />
                         </Route>
                     </Switch>
-                    <Footer />
+                    {/* <Footer /> */}
                 </Router>
             </AuthProvider>
         </div>

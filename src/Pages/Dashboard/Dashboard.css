@@ -1,0 +1,14 @@
+@media only screen and (max-width: 768px) {
+    .my-col{
+        display: none;
+        
+    }
+
+    .offCanvas-controller{
+        display: block !important;
+    }
+
+    .handle-canvas{
+        display: block !important;
+    }
+}

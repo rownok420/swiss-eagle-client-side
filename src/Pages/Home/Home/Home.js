@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../../Share/Header/Header';
 import Banner from '../Banner/Banner';
 import Brand from '../Brand/Brand';
 import Contact from '../Contact/Contact';
@@ -9,6 +10,7 @@ import Review from '../Review/Review';
 const Home = () => {
     return (
         <div>
+            {/* <Header /> */}
             <Banner />
             <Premier />
             <Brand />
