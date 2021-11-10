@@ -50,7 +50,7 @@ const ExploreCard = () => {
                                         </Card.Text>
                                     </Card.Body>
                                     <Card.Footer className="text-center">
-                                        <Link to="/placeOrder">
+                                        <Link to={`/placeOrder/${product._id}`}>
                                             <button className="home-button mb-2">
                                                 Place Order
                                             </button>
@@ -67,7 +67,3 @@ const ExploreCard = () => {
 };
 
 export default ExploreCard;
-
-{
-    /* <Link to={`/placeorder/${_id}`}></Link> */
-}

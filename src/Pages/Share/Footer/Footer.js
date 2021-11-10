@@ -103,7 +103,7 @@ const Footer = () => {
                             className=" mt-2 d-inline-block"
                         >
                             {" "}
-                            Md. Rownok Jahan
+                            Md. Rownok Jahan Ritu
                         </span>
                     </h5>
                 </div>

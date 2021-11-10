@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Product.css";
 
 const Product = ({ product }) => {
-    const { name, price, description, image } = product;
+    const { name, price, description, image, _id } = product;
     return (
         <Col>
             <Card className="h-100 card-style card-hover-style">
@@ -25,7 +25,7 @@ const Product = ({ product }) => {
                     <Card.Text>{description?.slice(0, 100)}</Card.Text>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                    <Link to="/placeOrder">
+                    <Link  to={`/placeOrder/${_id}`}>
                         <button className="home-button mb-2">
                             Place Order
                         </button>
