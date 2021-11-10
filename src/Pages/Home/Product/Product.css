@@ -1,0 +1,13 @@
+.card-img-container{
+    overflow: hidden;
+}
+
+.card-img-style{
+    height: 250px;
+    object-fit: cover !important;
+    transition: .4s;
+}
+
+.card-hover-style:hover .card-img-style{
+    transform: scale(1.2);
+}
