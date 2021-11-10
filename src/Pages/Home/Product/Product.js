@@ -16,12 +16,12 @@ const Product = ({product}) => {
                 </div>
                 <Card.Body>
                     <div className="my-3">
-                        <Card.Title>{name.slice(0, 26)}</Card.Title>
+                        <Card.Title>{name?.slice(0, 26)}</Card.Title>
                     </div>
                     <div>
                         <p style={{ color: "#ff7c5b" }}>${price}</p>
                     </div>
-                    <Card.Text>{description.slice(0, 100)}</Card.Text>
+                    <Card.Text>{description?.slice(0, 100)}</Card.Text>
                 </Card.Body>
                 <Card.Footer className="text-center">
                     {/* <Link to={`/placeorder/${_id}`}> */}

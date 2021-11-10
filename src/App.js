@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home/Home";
 import Header from "./Pages/Share/Header/Header";
-// import Footer from "./Pages/Share/Footer/Footer";
+import Footer from "./Pages/Share/Footer/Footer";
 import NotFound from "./Pages/NotFound/NotFound";
 import About from "./Pages/About/About";
 import Explore from "./Pages/Explore/Explore";
@@ -45,7 +45,7 @@ function App() {
                             <NotFound />
                         </Route>
                     </Switch>
-                    {/* <Footer /> */}
+                    <Footer />
                 </Router>
             </AuthProvider>
         </div>
