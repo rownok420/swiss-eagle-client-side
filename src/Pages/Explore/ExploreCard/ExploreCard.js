@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import useProducts from "../../../Hooks/useProducts";
 
 const ExploreCard = () => {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        fetch("./products.json")
-            .then((res) => res.json())
-            .then((data) => {
-                setProducts(data);
-            });
-    }, []);
+    const [products] = useProducts();
 
     return (
         <div className="mb-5 top-margin">
@@ -28,7 +21,7 @@ const ExploreCard = () => {
                 <div className="mt-5">
                     <Row xs={1} md={2} lg={3} className="g-4">
                         {products.map((product) => (
-                            <Col key={product.price}>
+                            <Col key={product._id}>
                                 <Card className="h-100 card-style card-hover-style">
                                     <div className="card-img-container">
                                         <Card.Img
@@ -38,13 +31,14 @@ const ExploreCard = () => {
                                         />
                                     </div>
                                     <Card.Body>
-                                        <div className="my-3">
+                                        <div className="my-3 d-flex justify-content-between align-items-center">
                                             <Card.Title>
-                                                {product?.name.slice(0, 26)}
+                                                {product?.name?.slice(0, 26)}
                                             </Card.Title>
-                                        </div>
-                                        <div>
-                                            <p style={{ color: "#ff7c5b" }}>
+                                            <p
+                                                className="fw-bold"
+                                                style={{ color: "#ff7c5b" }}
+                                            >
                                                 ${product?.price}
                                             </p>
                                         </div>
@@ -56,11 +50,11 @@ const ExploreCard = () => {
                                         </Card.Text>
                                     </Card.Body>
                                     <Card.Footer className="text-center">
-                                        {/* <Link to={`/placeorder/${_id}`}> */}
-                                        <button className="home-button mb-2">
-                                            Place Order
-                                        </button>
-                                        {/* </Link> */}
+                                        <Link to="/placeOrder">
+                                            <button className="home-button mb-2">
+                                                Place Order
+                                            </button>
+                                        </Link>
                                     </Card.Footer>
                                 </Card>
                             </Col>
@@ -73,3 +67,7 @@ const ExploreCard = () => {
 };
 
 export default ExploreCard;
+
+{
+    /* <Link to={`/placeorder/${_id}`}></Link> */
+}

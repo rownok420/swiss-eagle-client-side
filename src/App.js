@@ -12,6 +12,8 @@ import Register from "./Pages/Login/Register/Register";
 import Login from "./Pages/Login/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
+import AddProduct from "./Pages/AddProduct/AddProduct";
 
 function App() {
     return (
@@ -35,6 +37,12 @@ function App() {
                         <PrivateRoute path="/dashboard">
                             <Dashboard />
                         </PrivateRoute>
+                        <Route exact path="/placeOrder">
+                            <PlaceOrder />
+                        </Route>
+                        <Route exact path="/addProduct">
+                            <AddProduct />
+                        </Route>
                         <Route exact path="/register">
                             <Register />
                         </Route>

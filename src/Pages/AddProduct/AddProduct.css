@@ -1,0 +1,28 @@
+.service-background{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.3)), url('../../images/addProduct.jpg');
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.add-services input, textarea {
+    width: 60%;
+    margin: 12px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .add-services input, textarea{
+        width: 90% !important;
+        
+    }
+}

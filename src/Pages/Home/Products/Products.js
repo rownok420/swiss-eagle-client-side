@@ -6,6 +6,8 @@ import "./Products.css";
 
 const Products = () => {
     const [products] = useProducts();
+    const pd = products.slice(0, 6)
+
     return (
         <div className="mb-5 top-margin">
             <Container>
@@ -15,8 +17,8 @@ const Products = () => {
                 </div>
                 <div>
                     <Row xs={1} md={2} lg={3} className="g-4">
-                        {products.map((product) => (
-                            <Product key={product.price} product={product} />
+                        {pd.map((product) => (
+                            <Product key={product._id} product={product} />
                         ))}
                     </Row>
                 </div>
