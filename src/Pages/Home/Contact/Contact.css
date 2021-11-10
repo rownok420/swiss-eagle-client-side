@@ -1,0 +1,16 @@
+.contact-img-container{
+    overflow: hidden;
+}
+
+.contact-img:hover{
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .form-style{
+        width: 80% !important;
+    }
+}
