@@ -13,7 +13,6 @@ import Login from "./Pages/Login/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
-import AddProduct from "./Pages/AddProduct/AddProduct";
 
 function App() {
     return (
@@ -39,9 +38,6 @@ function App() {
                         </PrivateRoute>
                         <Route exact path="/placeOrder/:id">
                             <PlaceOrder />
-                        </Route>
-                        <Route exact path="/addProduct">
-                            <AddProduct />
                         </Route>
                         <Route exact path="/register">
                             <Register />

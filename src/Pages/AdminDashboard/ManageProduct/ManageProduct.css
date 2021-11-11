@@ -1,0 +1,7 @@
+.dotted-hr{
+    background-color: unset;
+    border: 8px dotted black;
+    border-bottom: none;
+    width: 150px;
+    margin: auto;
+}

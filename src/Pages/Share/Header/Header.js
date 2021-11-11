@@ -43,9 +43,6 @@ const Header = () => {
                         <NavLink activeStyle={activeStyle} to="/dashboard">
                             Dashboard
                         </NavLink>
-                        <NavLink activeStyle={activeStyle} to="/addProduct">
-                            Add Product
-                        </NavLink>
                     </Nav>
 
                     {user.email ? (

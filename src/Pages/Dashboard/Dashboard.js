@@ -6,6 +6,10 @@ import MyOrders from "../UserDashboard/MyOrders/MyOrders";
 import PayBill from "../UserDashboard/PayBill/PayBill";
 import "./Dashboard.css";
 import logo from "../../images/logo.png";
+import MakeAdmin from "../AdminDashboard/MakeAdmin/MakeAdmin";
+import AddProduct from "../AddProduct/AddProduct";
+import ManageProduct from "../AdminDashboard/ManageProduct/ManageProduct";
+import ManageAllOrders from "../AdminDashboard/ManageAllOrders/ManageAllOrders";
 
 const Dashboard = () => {
     const [show, setShow] = useState(false);
@@ -34,7 +38,9 @@ const Dashboard = () => {
                     onHide={handleClose}
                 >
                     <Offcanvas.Header closeButton>
-                        <Offcanvas.Title className="fs-1">Dashboard</Offcanvas.Title>
+                        <Offcanvas.Title className="fs-1">
+                            Dashboard
+                        </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className="canvas-body">
                         <NavLink to="/home">Home</NavLink>
@@ -44,6 +50,18 @@ const Dashboard = () => {
                         <NavLink to={`${url}/customerReview`}>Review</NavLink>
                         <br />
                         <NavLink to={`${url}/payBill`}>Pay Bill</NavLink>
+                        <br />
+                        <NavLink to={`${url}/makeAdmin`}>Make Admin</NavLink>
+                        <br />
+                        <NavLink to={`${url}/addProduct`}>Add Product</NavLink>
+                        <br />
+                        <NavLink to={`${url}/manageProduct`}>
+                            Manage All Products
+                        </NavLink>
+                        <br />
+                        <NavLink to={`${url}/manageOrder`}>
+                            Manage All Orders
+                        </NavLink>
                     </Offcanvas.Body>
                 </Offcanvas>
                 <div>
@@ -69,6 +87,23 @@ const Dashboard = () => {
                                 <NavLink to={`${url}/payBill`}>
                                     Pay Bill
                                 </NavLink>
+                                <hr />
+
+                                <NavLink to={`${url}/makeAdmin`}>
+                                    Make Admin
+                                </NavLink>
+                                <br />
+                                <NavLink to={`${url}/addProduct`}>
+                                    Add Product
+                                </NavLink>
+                                <br />
+                                <NavLink to={`${url}/manageProduct`}>
+                                    Manage Products
+                                </NavLink>
+                                <br />
+                                <NavLink to={`${url}/manageOrder`}>
+                                    Manage All Orders
+                                </NavLink>
                             </Col>
                             <Col xs={12} lg={9}>
                                 <Switch>
@@ -80,6 +115,18 @@ const Dashboard = () => {
                                     </Route>
                                     <Route path={`${path}/payBill`}>
                                         <PayBill />
+                                    </Route>
+                                    <Route path={`${path}/makeAdmin`}>
+                                        <MakeAdmin />
+                                    </Route>
+                                    <Route path={`${path}/addProduct`}>
+                                        <AddProduct />
+                                    </Route>
+                                    <Route path={`${path}/manageProduct`}>
+                                        <ManageProduct />
+                                    </Route>
+                                    <Route path={`${path}/manageOrder`}>
+                                        <ManageAllOrders />
                                     </Route>
                                 </Switch>
                             </Col>

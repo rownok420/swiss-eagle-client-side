@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import img from "../../../images/sad.png";
 
 const PayBill = () => {
@@ -11,13 +10,10 @@ const PayBill = () => {
                     <div>
                         <img
                             src={img}
-                            className="w-50 p-5 notFound-img"
+                            className="w-75 p-5 notFound-img"
                             alt=""
                         />
                     </div>
-                    <Link to="/home">
-                        <button className="home-button">Go to Home</button>
-                    </Link>
                 </div>
             </div>
         </div>
