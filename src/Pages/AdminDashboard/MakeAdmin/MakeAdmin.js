@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import "./MakeAdmin.css";
 
 const MakeAdmin = () => {
@@ -16,7 +17,11 @@ const MakeAdmin = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.modifiedCount) {
-                    console.log(data);
+                    Swal.fire(
+                        "Congrats!",
+                        "Admin Added Successfully!",
+                        "success"
+                    );
                     reset();
                 }
             });
