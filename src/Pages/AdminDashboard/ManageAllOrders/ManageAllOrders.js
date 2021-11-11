@@ -1,9 +1,119 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const ManageAllOrders = () => {
+    const [orders, setOrders] = useState([]);
+    const [update, setUpdate] = useState(null);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/allOrders")
+            .then((res) => res.json())
+            .then((data) => {
+                setOrders(data);
+            });
+    }, [update]);
+
+    // handle update product
+    const handleUpdateStatus = (id) => {
+        fetch(`http://localhost:5000/allOrders/${id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(orders),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire("Good job!", "Your order confirmed", "success");
+                    setUpdate(!update);
+                } else {
+                    setUpdate(false);
+                }
+            });
+    };
     return (
-        <div>
-            <h1>Manage All Orders</h1>
+        <div className="my-5">
+            <Container>
+                <div className="text-center">
+                    <h1 className="hed-color mb-3">Manage All Orders</h1>
+                    <hr className="dotted-hr" />
+                </div>
+                <div className="mt-5">
+                    <Row xs={1} md={2} lg={3} className="g-4">
+                        {orders.map((order) => (
+                            <Col key={order._id}>
+                                <Card className="h-100 card-style card-hover-style">
+                                    <div className="card-img-container">
+                                        <Card.Img
+                                            className="card-img-style"
+                                            variant="top"
+                                            src={order?.image}
+                                        />
+                                    </div>
+                                    <Card.Body>
+                                        <div className="my-3 d-flex justify-content-between align-items-center">
+                                            <Card.Title>
+                                                {order?.serviceName?.slice(
+                                                    0,
+                                                    26
+                                                )}
+                                            </Card.Title>
+                                            <p
+                                                className="fw-bold"
+                                                style={{ color: "#ff7c5b" }}
+                                            >
+                                                ${order?.price}
+                                            </p>
+                                        </div>
+                                        <small className="text-muted">
+                                            Booked by: {order?.name}
+                                        </small>
+                                        <div className="mt-3">
+                                            {order?.status === "Pending" ? (
+                                                <h6>
+                                                    Order Status:{" "}
+                                                    <span
+                                                        style={{
+                                                            color: "red",
+                                                            fontWeight: "bold",
+                                                        }}
+                                                    >
+                                                        {order?.status}
+                                                    </span>
+                                                </h6>
+                                            ) : (
+                                                <h6>
+                                                    Order Status:{" "}
+                                                    <span
+                                                        style={{
+                                                            color: "green",
+                                                            fontWeight: "bold",
+                                                        }}
+                                                    >
+                                                        {order?.status}
+                                                    </span>
+                                                </h6>
+                                            )}
+                                        </div>
+                                    </Card.Body>
+                                    <Card.Footer className="text-center">
+                                        <button
+                                            onClick={() =>
+                                                handleUpdateStatus(order?._id)
+                                            }
+                                            className="home-button mb-2"
+                                        >
+                                            Confirm Order
+                                        </button>
+                                    </Card.Footer>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
+            </Container>
         </div>
     );
 };

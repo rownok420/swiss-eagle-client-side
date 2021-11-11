@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Subscribe from "../Share/Subscribe/Subscribe";
 import "./AddProduct.css";
 import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
@@ -9,7 +8,7 @@ import Swal from "sweetalert2";
 
 const AddProduct = () => {
     // useEffect(() => {
-    //     document.title = 'Travel On : Add service'
+    //     document.title = 'Swiss Eagle : Add service'
     // }, []);
 
     const history = useHistory();
@@ -126,7 +125,6 @@ const AddProduct = () => {
                     </Container>
                 </div>
             </div>
-            <Subscribe />
         </div>
     );
 };

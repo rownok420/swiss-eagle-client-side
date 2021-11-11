@@ -10,11 +10,13 @@ import MakeAdmin from "../AdminDashboard/MakeAdmin/MakeAdmin";
 import AddProduct from "../AddProduct/AddProduct";
 import ManageProduct from "../AdminDashboard/ManageProduct/ManageProduct";
 import ManageAllOrders from "../AdminDashboard/ManageAllOrders/ManageAllOrders";
+import useAuth from "../../Hooks/useAuth";
 
 const Dashboard = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const { logOut } = useAuth();
 
     let { path, url } = useRouteMatch();
 
@@ -99,6 +101,12 @@ const Dashboard = () => {
                             <i className="fas fa-home me-2"></i>
                             <NavLink to="/home">Back to home</NavLink>
                         </div>
+                        <div className="d-flex justify-content-start align-items-center">
+                            <i className="fas fa-sign-out-alt me-2"></i>
+                            <NavLink onClick={logOut} to="/login">
+                                Logout
+                            </NavLink>
+                        </div>
                     </Offcanvas.Body>
                 </Offcanvas>
                 <div>
@@ -163,6 +171,12 @@ const Dashboard = () => {
                                 <div className="d-flex justify-content-start align-items-center">
                                     <i className="fas fa-home me-2"></i>
                                     <NavLink to="/home">Back to home</NavLink>
+                                </div>
+                                <div className="d-flex justify-content-start align-items-center">
+                                    <i className="fas fa-sign-out-alt me-2"></i>
+                                    <NavLink onClick={logOut} to="/login">
+                                        Logout
+                                    </NavLink>
                                 </div>
                             </Col>
                             <Col xs={12} lg={10}>
