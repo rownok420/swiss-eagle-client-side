@@ -61,7 +61,7 @@ const PlaceOrder = () => {
             .then((data) => {
                 if (data.insertedId) {
                     Swal.fire("Good job!", "Order place successful", "success");
-                    history.push("/home");
+                    history.push("/dashboard");
                 }
             });
     };
