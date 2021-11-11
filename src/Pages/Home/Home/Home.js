@@ -10,7 +10,7 @@ import Review from '../Review/Review';
 const Home = () => {
     return (
         <div>
-            {/* <Header /> */}
+            <Header />
             <Banner />
             <Premier />
             <Brand />
