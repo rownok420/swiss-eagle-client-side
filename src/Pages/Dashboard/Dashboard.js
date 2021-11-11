@@ -179,7 +179,7 @@ const Dashboard = () => {
                                     </NavLink>
                                 </div>
                             </Col>
-                            <Col xs={12} lg={10}>
+                            <Col xs={12} lg={10} style={{backgroundColor: "#f4f7fc", height: '100vh'}}>
                                 <Switch>
                                     <Route exact path={path}>
                                         <MyOrders />

@@ -42,6 +42,8 @@ const Register = () => {
             .then((result) => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                // save user to database
+                saveUser(email, name, "POST");
                 setError("");
                 setUserName(name);
                 history.push(redirect_uri);
@@ -56,7 +58,9 @@ const Register = () => {
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then((result) => {
-                // console.log(result.user);
+                // save user to database
+                saveUser(result.user.email, result.user.displayName, "PUT");
+                setError("");
                 history.push(redirect_uri);
             })
             .catch((err) => {
@@ -64,6 +68,23 @@ const Register = () => {
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));
+    };
+
+    const saveUser = (email, displayName, method) => {
+        const users = { email, displayName };
+        // sent to database
+        fetch("http://localhost:5000/users", {
+            method: method,
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(users),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.insertedId) {
+                }
+            });
     };
 
     return (
