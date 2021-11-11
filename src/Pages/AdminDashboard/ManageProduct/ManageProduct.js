@@ -50,7 +50,7 @@ const ManageProduct = () => {
                     <hr className="dotted-hr" />
                 </div>
                 <div className="mt-5">
-                    <Row xs={1} md={2} lg={2} className="g-4">
+                    <Row xs={1} md={2} lg={3} className="g-4">
                         {products.map((product) => (
                             <Col key={product._id}>
                                 <Card className="h-100 card-style card-hover-style">

@@ -1,42 +1,45 @@
-.logo-bg,
-.offCanvas-controller {
+.logo-bg {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
     padding: 25px 0px;
 }
 
-.my-col{
+.flex-bg {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    padding: 25px 0px;
+}
+
+.my-col {
     background-color: #f7f7f7;
     height: 100vh;
 }
 
-.my-col a, .canvas-body a {
+.my-col a,
+.canvas-body a {
     display: block;
     color: black;
     text-decoration: none;
     margin: 5px 0px !important;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
-    font-family: 'Libre Baskerville', serif;
-    transition: .1s;
-
+    font-family: "Libre Baskerville", serif;
+    transition: 0.1s;
 }
 
-.my-col a:hover{
-    color: #FF3614;
+.my-col a:hover {
+    color: #ff3614;
 }
 
-.canvas-body a:hover{
-    color: #FF3614;
+.canvas-body a:hover {
+    color: #ff3614;
 }
 
-.my-col a:focus{
-    color: #FF3614;
+.my-col a:focus {
+    color: #ff3614;
 }
 
-.canvas-body a:focus{
-    color: #FF3614;
+.canvas-body a:focus {
+    color: #ff3614;
 }
-
 
 @media only screen and (max-width: 999px) {
     .my-col {
@@ -50,7 +53,7 @@
     .handle-canvas {
         display: block !important;
     }
-    .logo-bg{
+    .logo-bg {
         display: none;
     }
 }
