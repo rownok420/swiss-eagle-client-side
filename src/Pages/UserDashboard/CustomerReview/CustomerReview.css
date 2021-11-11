@@ -1,0 +1,22 @@
+
+.add-rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-rating-width{
+    width: 80%;
+}
+
+.add-rating input , label{
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.add-rating textarea{
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+}

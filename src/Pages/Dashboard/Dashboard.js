@@ -79,28 +79,40 @@ const Dashboard = () => {
                         </div>
                         {admin && (
                             <>
-                                <div className="d-flex justify-content-start align-items-center">
+                                <div
+                                    onClick={handleClose}
+                                    className="d-flex justify-content-start align-items-center"
+                                >
                                     <i className="fas fa-user me-2"></i>
                                     <NavLink to={`${url}/makeAdmin`}>
                                         Make Admin
                                     </NavLink>
                                 </div>
                                 <br />
-                                <div className="d-flex justify-content-start align-items-center">
+                                <div
+                                    onClick={handleClose}
+                                    className="d-flex justify-content-start align-items-center"
+                                >
                                     <i className="fas fa-plus me-2"></i>
                                     <NavLink to={`${url}/addProduct`}>
                                         Add Product
                                     </NavLink>
                                 </div>
                                 <br />
-                                <div className="d-flex justify-content-start align-items-center">
+                                <div
+                                    onClick={handleClose}
+                                    className="d-flex justify-content-start align-items-center"
+                                >
                                     <i className="fas fa-clock me-2"></i>
                                     <NavLink to={`${url}/manageProduct`}>
                                         Manage All Products
                                     </NavLink>
                                 </div>
                                 <br />
-                                <div className="d-flex justify-content-start align-items-center">
+                                <div
+                                    onClick={handleClose}
+                                    className="d-flex justify-content-start align-items-center"
+                                >
                                     <i className="fas fa-cannabis me-2"></i>
                                     <NavLink to={`${url}/manageOrder`}>
                                         Manage All Orders
