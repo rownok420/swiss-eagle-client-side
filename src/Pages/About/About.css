@@ -1,0 +1,21 @@
+.about-background{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0,0,0,.2)), url('../../images/about.jpg');
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.dep-heading{
+    font-size: 45px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}

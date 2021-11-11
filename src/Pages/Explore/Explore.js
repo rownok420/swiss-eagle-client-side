@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../Share/Footer/Footer';
+import Header from '../Share/Header/Header';
 import Subscribe from '../Share/Subscribe/Subscribe';
 import './Explore.css'
 import ExploreCard from './ExploreCard/ExploreCard';
@@ -7,6 +9,7 @@ import ExploreCard from './ExploreCard/ExploreCard';
 const Explore = () => {
     return (
         <div>
+            <Header />
             <div className="text-center">
                 <div className="background">
                     <h1 className="dep-heading">Explore Our Products</h1>
@@ -29,6 +32,7 @@ const Explore = () => {
             <div>
                 <Subscribe />
             </div>
+            <Footer />
         </div>
     );
 };
