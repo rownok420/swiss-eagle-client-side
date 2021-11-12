@@ -66,6 +66,18 @@ const Header = () => {
                         </div>
                     )}
 
+                    {/* {user?.photoURL && (
+                        <Navbar.Brand style={{ marginRight: "0px" }}>
+                            <img
+                                src={user?.photoURL}
+                                width="35"
+                                height="35"
+                                className="d-inline-block align-top rounded-circle m-2 d-none d-lg-block"
+                                alt=""
+                            />
+                        </Navbar.Brand>
+                    )} */}
+
                     {user?.email && (
                         <Navbar.Brand className="py-0">
                             <h6

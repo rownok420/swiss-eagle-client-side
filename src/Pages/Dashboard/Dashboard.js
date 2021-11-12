@@ -11,6 +11,7 @@ import AddProduct from "../AddProduct/AddProduct";
 import ManageProduct from "../AdminDashboard/ManageProduct/ManageProduct";
 import ManageAllOrders from "../AdminDashboard/ManageAllOrders/ManageAllOrders";
 import useAuth from "../../Hooks/useAuth";
+import Profile from "../UserDashboard/Profile/Profile";
 
 const Dashboard = () => {
     const [show, setShow] = useState(false);
@@ -52,12 +53,17 @@ const Dashboard = () => {
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className="canvas-body text-left">
+                        <div onClick={handleClose} className="d-flex justify-content-start align-items-center">
+                            <i className="fas fa-user-circle me-2"></i>
+                            <NavLink to={`${url}`}>Profile</NavLink>
+                        </div>
+                        <br />
                         <div
                             onClick={handleClose}
                             className="d-flex justify-content-start align-items-center"
                         >
                             <i className="fas fa-shopping-basket me-2"></i>
-                            <NavLink to={`${url}`}>My Orders</NavLink>
+                            <NavLink to={`${url}/myOrder`}>My Orders</NavLink>
                         </div>
                         <br />
                         <div
@@ -147,8 +153,15 @@ const Dashboard = () => {
                         <Row>
                             <Col className="my-col text-left pt-5" lg={2}>
                                 <div className="d-flex justify-content-start align-items-center">
+                                    <i className="fas fa-user-circle me-2"></i>
+                                    <NavLink to={`${url}`}>Profile</NavLink>
+                                </div>
+                                <br />
+                                <div className="d-flex justify-content-start align-items-center">
                                     <i className="fas fa-shopping-basket me-2"></i>
-                                    <NavLink to={`${url}`}>My Orders</NavLink>
+                                    <NavLink to={`${url}/myOrder`}>
+                                        My Orders
+                                    </NavLink>
                                 </div>
                                 <br />
                                 <div className="d-flex justify-content-start align-items-center">
@@ -204,6 +217,7 @@ const Dashboard = () => {
                                     <i className="fas fa-home me-2"></i>
                                     <NavLink to="/home">Back to home</NavLink>
                                 </div>
+                                <br />
                                 <div className="d-flex justify-content-start align-items-center">
                                     <i className="fas fa-sign-out-alt me-2"></i>
                                     <NavLink onClick={logOut} to="/login">
@@ -221,6 +235,9 @@ const Dashboard = () => {
                             >
                                 <Switch>
                                     <Route exact path={path}>
+                                        <Profile />
+                                    </Route>
+                                    <Route path={`${path}/myOrder`}>
                                         <MyOrders />
                                     </Route>
                                     <Route path={`${path}/customerReview`}>

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "./AddProduct.css";
 import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
@@ -38,21 +37,6 @@ const AddProduct = () => {
     };
     return (
         <div>
-            <div className="text-center">
-                <div className="service-background">
-                    <h1 className="dep-heading">Add a New Product</h1>
-                    <p className="text-white">
-                        Book a marvelous watch at great price! Grab our last
-                        minute offer and pack the things for the journey you{" "}
-                        <br /> dream about. See our recommendations.
-                    </p>
-                    <Link to="/home">
-                        <button className="home-button">
-                            <i className="fas fa-backward pe-2"></i> Back home
-                        </button>
-                    </Link>
-                </div>
-            </div>
             <div style={{ backgroundClip: "#f3f2f0" }}>
                 <div className="my-5">
                     <Container>
@@ -61,13 +45,13 @@ const AddProduct = () => {
                                 style={{ color: "#ff7c5b" }}
                                 className="hed-color mb-3"
                             >
-                                Add Your marvelous Product
+                                Add Your Marvelous Product
                             </h1>
                             <p>
-                                Show travel details, galleries, allow the users
+                                Show Product details, galleries, allow the users
                                 to search & more. And our simple <br /> booking
-                                form allows visitors to easily book their next
-                                tour.
+                                form allows visitors to easily add our next
+                                collections.
                             </p>
                         </div>
                         <div>

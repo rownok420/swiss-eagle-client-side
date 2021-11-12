@@ -23,6 +23,13 @@ const MakeAdmin = () => {
                         "success"
                     );
                     reset();
+                }else{
+                    Swal.fire(
+                        "Sorry!",
+                        "Invalid Email Address",
+                        "success"
+                    );
+                    reset();
                 }
             });
     };

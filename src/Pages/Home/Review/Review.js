@@ -1,16 +1,47 @@
-import React from "react";
-import { Container } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Card, Container} from "react-bootstrap";
 import "./Review.css";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import useProducts from "../../../Hooks/useProducts";
+import userImg from '../../../images/user.png'
+
 
 const Review = () => {
-    const [products] = useProducts();
+    const [ratings, setRatings] = useState();
+
+    useEffect(() => {
+        fetch("http://localhost:5000/getReview")
+            .then((res) => res.json())
+            .then((data) => setRatings(data));
+    }, []);
+
+    // display rating icon
+    // const displayRateIcon = (rate) => {
+    //     const floorRate = Math.floor(rate);
+    //     let rateIcon = "";
+
+    //     for (let i = 0; i < floorRate; i++) {
+    //         rateIcon += `<i class="bi bi-star-fill"></i>`;
+    //     }
+
+    //     if (rate !== floorRate) {
+    //         rateIcon += `<i class="bi bi-star-half"></i>`;
+    //     } else {
+    //         rateIcon += `<i class="bi bi-star"></i>`;
+    //     }
+
+    //     if (5 - floorRate > 1) {
+    //         for (let i = 0; i < 5 - floorRate - 1; i++) {
+    //             rateIcon += `<i class="bi bi-star"></i>`;
+    //         }
+    //     }
+
+    //     return rateIcon;
+    // };
 
     var settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         autoplay: true,
         autoplaySpeed: 1000,
@@ -59,8 +90,33 @@ const Review = () => {
                 >
                     <div className="container">
                         <Slider {...settings}>
-                            {products?.map((product) => (
-                                <h1>{product.name}</h1>
+                            {ratings?.map((rating) => (
+                                <Card key={rating._id} className="h-100 my-3 h-100 card-style card-hover-style">
+                                    <div className="card-img-container">
+                                        <Card.Img
+                                            style={{
+                                                height: "100px",
+                                                width: "100px",
+                                                borderRadius: "100%",
+                                            }}
+                                            className="card-img-style mx-auto my-3"
+                                            variant="top"
+                                            src={rating.image ? rating.image : userImg}
+                                        />
+                                    </div>
+                                    <Card.Body className="text-center">
+                                        <Card.Title className="fs-3">
+                                            {rating.name?.slice(0, 26)}
+                                        </Card.Title>
+                                        <h5>{rating.address}</h5>
+                                        <Card.Text className="fs-5">
+                                            {rating.description?.slice(0, 100)}
+                                        </Card.Text>
+                                    </Card.Body>
+                                    <Card.Footer className="text-center">
+                                        {rating.rating}
+                                    </Card.Footer>
+                                </Card>
                             ))}
                         </Slider>
                     </div>
@@ -71,9 +127,6 @@ const Review = () => {
 };
 
 export default Review;
-
-
-
 
 // import React from 'react';
 // import "slick-carousel/slick/slick.css";

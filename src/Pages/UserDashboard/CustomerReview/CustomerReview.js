@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
 import { Container } from "react-bootstrap";
+import { useHistory } from "react-router";
 import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 import "./CustomerReview.css";
 
 const CustomerReview = () => {
     const { user } = useAuth();
+    const history = useHistory();
 
     const nameRef = useRef();
     const addressRef = useRef();
@@ -18,7 +20,7 @@ const CustomerReview = () => {
         const address = addressRef.current.value;
         const rating = ratingRef.current.value;
         const description = descRef.current.value;
-        const image = user.image;
+        const image = user.photoURL;
 
         const userRating = {
             name,
@@ -29,7 +31,7 @@ const CustomerReview = () => {
         };
         console.log(userRating);
 
-        fetch("", {
+        fetch("http://localhost:5000/review", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -40,10 +42,11 @@ const CustomerReview = () => {
             .then((data) => {
                 if (data.insertedId) {
                     Swal.fire(
-                        "Good job!",
+                        "Respectfully thanked!",
                         "Review added successfully",
                         "success"
                     );
+                    history.push("/home")
                 }
             });
     };
@@ -52,6 +55,7 @@ const CustomerReview = () => {
         <div>
             <div className="my-5">
                 <h1 className="text-center hed-color">Review Us</h1>
+                <hr className="dotted-hr" />
             </div>
             <div>
                 <Container>
@@ -88,14 +92,11 @@ const CustomerReview = () => {
                                 <label htmlFor="">
                                     Rating
                                     <br />
-                                    {/* <input
-                                        className="form-control"
-                                        type="number"
-                                        placeholder="Rating"
+                                    <select
                                         ref={ratingRef}
                                         required
-                                    /> */}
-                                    <select required className="form-control">
+                                        className="form-control"
+                                    >
                                         <option>Select Rating</option>
                                         <option value="1">1</option>
                                         <option value="1.5">1.5</option>
@@ -134,23 +135,3 @@ const CustomerReview = () => {
 };
 
 export default CustomerReview;
-
-{/* <Row className="mb-3">
-    <Form.Group as={Col} controlId="formGridEmail">
-        <Form.Label>
-            Select Review <span style={{ color: "red" }}>*</span>
-        </Form.Label>
-        <select required className="form-control" {...register("rating")}>
-            <option>Select Rating</option>
-            <option value="1">1</option>
-            <option value="1.5">1.5</option>
-            <option value="2">2</option>
-            <option value="2.5">2.5</option>
-            <option value="3">3</option>
-            <option value="3.5">3.5</option>
-            <option value="4">4</option>
-            <option value="4.5">4.5</option>
-            <option value="5">5</option>
-        </select>
-    </Form.Group>
-</Row>; */}
