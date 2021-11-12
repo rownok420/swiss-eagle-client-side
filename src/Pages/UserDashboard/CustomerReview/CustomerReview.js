@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
@@ -46,7 +46,7 @@ const CustomerReview = () => {
                         "Review added successfully",
                         "success"
                     );
-                    history.push("/home")
+                    history.push("/home");
                 }
             });
     };
@@ -59,40 +59,44 @@ const CustomerReview = () => {
             </div>
             <div>
                 <Container>
-                    <div className="add-rating mt-5">
-                        <div className="add-rating-width">
-                            <form onSubmit={handlePlaceOrder}>
-                                <label htmlFor="">
-                                    Name
+                    <Row>
+                        <Col
+                        // className="d-flex align-items-center justify-content-center"
+                        >
+                            <div>
+                                <form
+                                    className="rating-style"
+                                    onSubmit={handlePlaceOrder}
+                                >
+                                    <label htmlFor="">Name</label>
                                     <br />
                                     <input
+                                        style={{ padding: "10px" }}
                                         className="form-control"
                                         type="text"
                                         ref={nameRef}
                                         readOnly
                                         value={user?.displayName || ""}
                                     />
-                                </label>
 
-                                <br />
+                                    <br />
 
-                                <label htmlFor="">
-                                    Address
+                                    <label htmlFor="">Address</label>
                                     <br />
                                     <input
+                                        style={{ padding: "10px" }}
                                         className="form-control"
                                         type="text"
                                         placeholder="Your address"
                                         ref={addressRef}
                                         required
                                     />
-                                </label>
 
-                                <br />
-                                <label htmlFor="">
-                                    Rating
+                                    <br />
+                                    <label htmlFor="">Rating</label>
                                     <br />
                                     <select
+                                        style={{ padding: "10px" }}
                                         ref={ratingRef}
                                         required
                                         className="form-control"
@@ -108,26 +112,29 @@ const CustomerReview = () => {
                                         <option value="4.5">4.5</option>
                                         <option value="5">5</option>
                                     </select>
-                                </label>
 
-                                <br />
-                                <label htmlFor="">
-                                    Description
+                                    <br />
+                                    <label htmlFor="">Description</label>
                                     <br />
                                     <textarea
                                         style={{ resize: "none" }}
                                         rows="4"
                                         cols="2"
+                                        className="w-100"
                                         type="text"
                                         placeholder="Description"
                                         ref={descRef}
                                         required
                                     />
-                                </label>
-                                <input className="home-button" type="submit" />
-                            </form>
-                        </div>
-                    </div>
+                                    <br />
+                                    <input
+                                        className="home-button"
+                                        type="submit"
+                                    />
+                                </form>
+                            </div>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
         </div>

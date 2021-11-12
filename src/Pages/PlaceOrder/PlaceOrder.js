@@ -4,6 +4,8 @@ import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import Footer from "../Share/Footer/Footer";
+import Header from "../Share/Header/Header";
 import Subscribe from "../Share/Subscribe/Subscribe";
 import "./PlaceOrder.css";
 
@@ -67,6 +69,7 @@ const PlaceOrder = () => {
     };
     return (
         <div>
+            <Header />
             <div className="text-center">
                 <div className="place-order-background">
                     <h1 className="dep-heading">Last Minute Offers</h1>
@@ -152,6 +155,7 @@ const PlaceOrder = () => {
                                     <div className=" place-order mt-5">
                                         <form onSubmit={handlePlaceOrder}>
                                             <input
+                                                className="form-control"
                                                 type="text"
                                                 ref={nameRef}
                                                 readOnly
@@ -159,6 +163,7 @@ const PlaceOrder = () => {
                                             />
                                             <br />
                                             <input
+                                                className="form-control"
                                                 type="email"
                                                 ref={emailRef}
                                                 readOnly
@@ -167,12 +172,14 @@ const PlaceOrder = () => {
                                             <br />
                                             <div className="d-flex justify-content-between w-100">
                                                 <input
+                                                    className="form-control"
                                                     type="text"
                                                     ref={serviceRef}
                                                     readOnly
                                                     value={service?.name || ""}
                                                 />
                                                 <input
+                                                    className="form-control"
                                                     type="text"
                                                     ref={priceRef}
                                                     readOnly
@@ -184,6 +191,7 @@ const PlaceOrder = () => {
                                             </div>
                                             <br />
                                             <input
+                                                className="form-control"
                                                 type="text"
                                                 placeholder="Your address"
                                                 ref={addressRrf}
@@ -191,13 +199,14 @@ const PlaceOrder = () => {
                                             />
                                             <br />
                                             <input
+                                                className="form-control"
                                                 type="number"
                                                 placeholder="Phone number"
                                                 required
                                             />
                                             <br />
                                             <input
-                                                className="home-button"
+                                                className="home-button form-control"
                                                 type="submit"
                                                 value="Place Order"
                                             />
@@ -210,6 +219,7 @@ const PlaceOrder = () => {
                 </div>
             </div>
             <Subscribe />
+            <Footer />
         </div>
     );
 };
