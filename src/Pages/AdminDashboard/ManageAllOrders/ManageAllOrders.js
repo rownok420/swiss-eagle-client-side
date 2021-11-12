@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
 import Swal from "sweetalert2";
 
 const ManageAllOrders = () => {
@@ -33,6 +33,17 @@ const ManageAllOrders = () => {
                 }
             });
     };
+
+    if (orders.length === 0) {
+        return (
+            <div
+                style={{ minHeight: "100vh" }}
+                className="d-flex my-5 justify-content-center align-items-center"
+            >
+                <Spinner animation="border" variant="info" />
+            </div>
+        );
+    }
 
     // handle delete user
     const handleDeleteOrder = (id) => {
@@ -135,7 +146,9 @@ const ManageAllOrders = () => {
                                             onClick={() =>
                                                 handleDeleteOrder(order?._id)
                                             }
-                                            style={{backgroundColor: "#FF3614"}}
+                                            style={{
+                                                backgroundColor: "#FF3614",
+                                            }}
                                             className="home-button  mb-2 w-100"
                                         >
                                             Delete Order

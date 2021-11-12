@@ -30,7 +30,7 @@ const AddProduct = () => {
                         "Product added successfully!",
                         "success"
                     );
-                    history.push("/home");
+                    history.push("/explore");
                     reset();
                 }
             });

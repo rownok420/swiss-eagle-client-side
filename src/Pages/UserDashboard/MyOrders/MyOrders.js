@@ -66,7 +66,10 @@ const MyOrders = () => {
                                     <Card.Body>
                                         <div className="my-3 d-flex justify-content-between align-items-center">
                                             <Card.Title>
-                                                {product?.serviceName?.slice(0, 26)}
+                                                {product?.serviceName?.slice(
+                                                    0,
+                                                    26
+                                                )}
                                             </Card.Title>
                                             <p
                                                 className="fw-bold"
@@ -111,7 +114,9 @@ const MyOrders = () => {
                                             onClick={() =>
                                                 handleDeleteOrder(product?._id)
                                             }
-                                            style={{backgroundColor: "#FF3614"}}
+                                            style={{
+                                                backgroundColor: "#FF3614",
+                                            }}
                                             className="home-button mb-2"
                                         >
                                             Cancel Order
