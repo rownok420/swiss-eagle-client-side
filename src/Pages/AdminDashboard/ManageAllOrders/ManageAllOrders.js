@@ -33,6 +33,30 @@ const ManageAllOrders = () => {
                 }
             });
     };
+
+    // handle delete user
+    const handleDeleteOrder = (id) => {
+        const proceed = window.confirm("Are you sure!!! you want to delete?");
+        if (proceed) {
+            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+                method: "DELETE",
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.deletedCount) {
+                        Swal.fire(
+                            "Sorry to say!",
+                            "Successfully deleted your Order!",
+                            "success"
+                        );
+                        const remainingProduct = orders?.filter(
+                            (product) => product._id !== id
+                        );
+                        setOrders(remainingProduct);
+                    }
+                });
+        }
+    };
     return (
         <div className="my-5">
             <Container>
@@ -103,9 +127,18 @@ const ManageAllOrders = () => {
                                             onClick={() =>
                                                 handleUpdateStatus(order?._id)
                                             }
-                                            className="home-button mb-2"
+                                            className="home-button w-100"
                                         >
                                             Confirm Order
+                                        </button>
+                                        <button
+                                            onClick={() =>
+                                                handleDeleteOrder(order?._id)
+                                            }
+                                            style={{backgroundColor: "#FF3614"}}
+                                            className="home-button  mb-2 w-100"
+                                        >
+                                            Delete Order
                                         </button>
                                     </Card.Footer>
                                 </Card>

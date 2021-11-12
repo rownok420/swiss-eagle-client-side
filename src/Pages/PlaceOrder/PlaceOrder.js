@@ -50,7 +50,6 @@ const PlaceOrder = () => {
             image,
         };
         // order.status = "Pending";
-        console.log(order);
 
         fetch("http://localhost:5000/placeOrder", {
             method: "POST",

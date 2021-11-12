@@ -86,6 +86,7 @@ const ManageProduct = () => {
                                                 handleDeleteOrder(product?._id)
                                             }
                                             className="home-button mb-2"
+                                            style={{backgroundColor: "#FF3614"}}
                                         >
                                             Delete Product
                                         </button>
