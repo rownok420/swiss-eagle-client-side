@@ -56,7 +56,7 @@ const Review = () => {
         <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="py-5 mt-4"
+            className="py-5 mt-4 review-section"
             style={{backgroundColor: "#f4f7fc"}}
         >
             <Container fluid>
@@ -73,9 +73,9 @@ const Review = () => {
                         <Slider {...settings}>
                             {ratings?.map((rating) => (
                                 <Card
-                                    style={{ height: "100%" }}
+                                    // style={{ height: "100%" }}
                                     key={rating._id}
-                                    className="mx-4"
+                                    // className="mx-4"
                                 >
                                     <div>
                                         <Card.Img

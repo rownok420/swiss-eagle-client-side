@@ -18,7 +18,7 @@ const Header = () => {
                 <Navbar.Brand>
                     <NavLink to="/">
                         <img
-                            className="logo text-white"
+                            className="logo"
                             src={logo}
                             alt="logo"
                         />
@@ -82,7 +82,7 @@ const Header = () => {
                     )}
 
                     {user?.email && (
-                        <Navbar.Brand className="py-0">
+                        <Navbar.Brand className="p-0">
                             <h6
                                 style={{ color: "#FF3614" }}
                                 className="name-style"
