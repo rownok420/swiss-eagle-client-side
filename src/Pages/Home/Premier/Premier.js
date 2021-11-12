@@ -6,7 +6,7 @@ import "./Premier.css";
 
 const Premier = () => {
     return (
-        <div className="top-margin">
+        <div data-aos="fade-up" data-aos-duration="1000" className="top-margin">
             <Container>
                 <Row>
                     <Col sm={12} md={6} className="d-flex justify-content-center align-items-center">

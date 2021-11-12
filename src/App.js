@@ -11,6 +11,11 @@ import Login from "./Pages/Login/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({
+    delay: 300,
+  })
 
 function App() {
     return (

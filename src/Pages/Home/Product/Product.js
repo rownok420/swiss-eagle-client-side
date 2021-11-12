@@ -6,7 +6,7 @@ import "./Product.css";
 const Product = ({ product }) => {
     const { name, price, description, image, _id } = product;
     return (
-        <Col>
+        <Col data-aos="fade-up" data-aos-duration="1000">
             <Card className="h-100 card-style card-hover-style">
                 <div className="card-img-container">
                     <Card.Img

@@ -7,7 +7,7 @@ import img3 from "../../../images/brand/brand-3.png";
 
 const Brand = () => {
     return (
-        <div className="top-margin">
+        <div data-aos="fade-up" data-aos-duration="1000" className="top-margin">
             <Container>
                 <div className="text-center">
                     <h1 className="hed-color mb-3">Special Edition</h1>

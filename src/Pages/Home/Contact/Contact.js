@@ -5,7 +5,7 @@ import './Contact.css'
 
 const Contact = () => {
     return (
-        <div style={{ backgroundColor: "#f3f2f0" }} className="py-5 top-margin">
+        <div data-aos="fade-up" data-aos-duration="1000" style={{ backgroundColor: "#f3f2f0" }} className="py-5 top-margin">
             <div className="container">
             <div className="text-center hed-color">
                     <h1 className="mb-5">Contact Us</h1>

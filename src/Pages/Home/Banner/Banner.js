@@ -4,7 +4,7 @@ import "./Banner.css";
 
 const Banner = () => {
     return (
-        <div className="text-center">
+        <div data-aos="fade-up" data-aos-duration="1000" className="text-center">
             <div className="bg-img">
                 <div className="container">
                     <h1 className="banner-heading">

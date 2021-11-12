@@ -54,7 +54,7 @@ const Review = () => {
         ],
     };
     return (
-        <div className="mb-5 top-margin">
+        <div data-aos="fade-up" data-aos-duration="1000" className="mb-5 top-margin">
             <Container>
                 <div className="text-center hed-color">
                     <h6>MODERN & BEAUTIFUL</h6>
