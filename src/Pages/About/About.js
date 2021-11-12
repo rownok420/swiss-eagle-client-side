@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Accordion, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../Share/Footer/Footer";
@@ -8,6 +8,10 @@ import "./About.css";
 import img from "../../images/about2.jpg";
 
 const About = () => {
+    useEffect(() => {
+        document.title = 'Swiss Eagle | About Us'
+    }, []);
+
     return (
         <div>
             <Header />

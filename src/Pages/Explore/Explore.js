@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
@@ -10,6 +10,10 @@ import ExploreCard from "./ExploreCard/ExploreCard";
 
 const Explore = () => {
     const [products] = useProducts();
+
+    useEffect(() => {
+        document.title = 'Swiss Eagle | All Products'
+    }, []);
 
     if (products.length === 0) {
         return (

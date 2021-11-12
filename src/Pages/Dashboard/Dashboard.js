@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Offcanvas } from "react-bootstrap";
 import { Switch, Route, useRouteMatch, NavLink } from "react-router-dom";
 import CustomerReview from "../UserDashboard/CustomerReview/CustomerReview";
@@ -22,6 +22,10 @@ const Dashboard = () => {
     const { logOut, admin } = useAuth();
 
     let { path, url } = useRouteMatch();
+
+    useEffect(() => {
+        document.title = 'Swiss Eagle | DashBoard'
+    }, []);
 
     return (
         <div>
