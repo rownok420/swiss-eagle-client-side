@@ -72,7 +72,7 @@ const useFirebase = () => {
 
     // load admin info
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://thawing-caverns-72785.herokuapp.com/users/${user.email}`)
             .then((res) => res.json())
             .then((data) => setAdmin(data.admin));
     }, [user.email]);

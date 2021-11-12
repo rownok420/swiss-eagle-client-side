@@ -9,7 +9,7 @@ const MyOrders = () => {
     const email = user?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrder/${email}`)
+        fetch(`https://thawing-caverns-72785.herokuapp.com/myOrder/${email}`)
             .then((res) => res.json())
             .then((data) => {
                 setMyOrders(data);
@@ -20,7 +20,7 @@ const MyOrders = () => {
     const handleDeleteOrder = (id) => {
         const proceed = window.confirm("Are you sure!!! you want to delete?");
         if (proceed) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://thawing-caverns-72785.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())

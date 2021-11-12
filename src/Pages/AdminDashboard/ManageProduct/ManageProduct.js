@@ -22,7 +22,7 @@ const ManageProduct = () => {
     const handleDeleteOrder = (id) => {
         const proceed = window.confirm("Are you sure!!! you want to delete product?");
         if (proceed) {
-            fetch(`http://localhost:5000/deleteProduct/${id}`, {
+            fetch(`https://thawing-caverns-72785.herokuapp.com/deleteProduct/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())

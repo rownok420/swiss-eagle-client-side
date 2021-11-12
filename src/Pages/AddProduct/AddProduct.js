@@ -15,7 +15,7 @@ const AddProduct = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        fetch("http://localhost:5000/addProduct", {
+        fetch("https://thawing-caverns-72785.herokuapp.com/addProduct", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

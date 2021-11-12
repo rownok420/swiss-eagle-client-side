@@ -31,7 +31,7 @@ const CustomerReview = () => {
         };
         console.log(userRating);
 
-        fetch("http://localhost:5000/review", {
+        fetch("https://thawing-caverns-72785.herokuapp.com/review", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

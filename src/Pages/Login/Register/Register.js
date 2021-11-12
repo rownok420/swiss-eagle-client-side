@@ -22,7 +22,7 @@ const Register = () => {
 
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.from || "/home";
+    const redirect_uri = location.state?.from || "/dashboard";
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -73,7 +73,7 @@ const Register = () => {
     const saveUser = (email, displayName, method) => {
         const users = { email, displayName };
         // sent to database
-        fetch("http://localhost:5000/users", {
+        fetch("https://thawing-caverns-72785.herokuapp.com/users", {
             method: method,
             headers: {
                 "content-type": "application/json",

@@ -11,7 +11,7 @@ const MakeAdmin = () => {
 
     const onSubmit = (data) => {
         // sent to database
-        fetch("http://localhost:5000/users/admin", {
+        fetch("https://thawing-caverns-72785.herokuapp.com/users/admin", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -37,7 +37,7 @@ const MakeAdmin = () => {
     };
 
     useEffect(() => {
-        fetch("http://localhost:5000/users")
+        fetch("https://thawing-caverns-72785.herokuapp.com/users")
             .then((res) => res.json())
             .then((data) => setUser(data));
     }, [update]);
@@ -73,7 +73,7 @@ const MakeAdmin = () => {
                 </div>
 
                 <div className="my-5">
-                    <Table striped bordered hover responsive>
+                    <Table striped bordered hover responsive className="mb-5">
                         <thead className="text-center">
                             <tr>
                                 <th className="py-3 fs-5">Name</th>

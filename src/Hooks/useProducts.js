@@ -4,7 +4,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/getProduct")
+        fetch("https://thawing-caverns-72785.herokuapp.com/getProduct")
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data);

@@ -26,7 +26,7 @@ const PlaceOrder = () => {
     const addressRrf = useRef();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/placeOrder/${id}`)
+        fetch(`https://thawing-caverns-72785.herokuapp.com/placeOrder/${id}`)
             .then((res) => res.json())
             .then((data) => setService(data));
     }, [id]);
@@ -51,7 +51,7 @@ const PlaceOrder = () => {
         };
         // order.status = "Pending";
 
-        fetch("http://localhost:5000/placeOrder", {
+        fetch("https://thawing-caverns-72785.herokuapp.com/placeOrder", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

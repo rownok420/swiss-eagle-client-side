@@ -12,7 +12,7 @@ const Review = () => {
     const [ratings, setRatings] = useState();
 
     useEffect(() => {
-        fetch("http://localhost:5000/getReview")
+        fetch("https://thawing-caverns-72785.herokuapp.com/getReview")
             .then((res) => res.json())
             .then((data) => setRatings(data));
     }, []);
