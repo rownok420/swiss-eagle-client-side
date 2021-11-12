@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
-import useAuth from '../../../Hooks/useAuth';
-import loginImg from '../../../images/login.png'
+import React, { useState } from "react";
+import { Col, Container, Form, Row } from "react-bootstrap";
+import { useHistory, useLocation } from "react-router";
+import { Link } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 
 const Login = () => {
-
-    const {
-        signInUsingGoogle,
-        error,
-        setError,
-        processLogin,
-        setIsLoading,
-    } = useAuth();
+    const { signInUsingGoogle, error, setError, processLogin, setIsLoading } =
+        useAuth();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -60,25 +53,16 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div style={{ backgroundColor: "#f4f7fc" }}>
             <Container>
                 <Row>
-                    <Col xs={12} md={6}>
-                        <div className="mb-4">
-                            <img className="w-100" src={loginImg} alt="" />
-                        </div>
-                    </Col>
                     <Col
-                        xs={12}
-                        md={6}
+                        style={{ height: "100vh" }}
                         className="d-flex align-items-center justify-content-center"
                     >
-                        <div>
+                        <div className="login-style">
                             <div>
-                                <h2
-                                    className="mb-2 fw-bold"
-                                    style={{ color: "#00a3c8" }}
-                                >
+                                <h2 className="mb-2 fw-bold hed-color pt-4">
                                     Login Your Account
                                 </h2>
                                 <p className="text-muted mb-4">
@@ -131,34 +115,45 @@ const Login = () => {
                                                     textDecoration: "none",
                                                 }}
                                             >
-                                                <p style={{ color: "#00a3c8" }}>
+                                                <p className="text-center" style={{ color: "#00a3c8" }}>
                                                     Don't have any
-                                                    account?Register Now
+                                                    account? Register Now
                                                 </p>
                                             </Link>
                                         </Form.Group>
                                     </div>
-                                    <button
-                                        className="login-btn rounded-2"
-                                        type="submit"
-                                    >
-                                        Login
-                                    </button>
+                                    <div className="text-center">
+                                        <button
+                                            className="register-btn rounded-2"
+                                            type="submit"
+                                        >
+                                            Login
+                                        </button>
+                                    </div>
                                 </Form>
                             </div>
 
-                            <div className="mt-4 mb-5 text-center">
+                            <div className="mt-4 text-center">
                                 <small style={{ color: "#00a3c8" }}>
-                                    or login with
+                                    or register with
                                 </small>
-                                <div className="mt-4">
-                                    <i
-                                        role="button"
-                                        style={{ color: "#00a3c8" }}
-                                        onClick={handleGoogleLogin}
-                                        className="fab fab-icon fa-2x fa-google"
-                                    ></i>
+                                <div
+                                    onClick={handleGoogleLogin}
+                                    role="button"
+                                    className="google-box"
+                                >
+                                    <div className="d-flex align-items-center justify-content-center">
+                                        <i className="fab fab-icon fa-2x fa-google ms-2 me-3"></i>
+                                        <h5>Google Sign in</h5>
+                                    </div>
                                 </div>
+                            </div>
+                            <div className="text-center mb-4 mt-3 ">
+                                <Link to="/home">
+                                    <button className="register-btn rounded-2">
+                                        Go Home
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </Col>
