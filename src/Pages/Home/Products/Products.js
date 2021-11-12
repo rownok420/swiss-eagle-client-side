@@ -1,12 +1,11 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-import useProducts from "../../../Hooks/useProducts";
+import useAllProducts from "../../../Hooks/useAllProducts";
 import Product from "../Product/Product";
 import "./Products.css";
 
 const Products = () => {
-    const [products] = useProducts();
-    const pd = products.slice(0, 6)
+    const [allProducts] = useAllProducts();
 
     return (
         <div className="mb-5 top-margin">
@@ -17,7 +16,7 @@ const Products = () => {
                 </div>
                 <div>
                     <Row xs={1} md={2} lg={3} className="g-4">
-                        {pd.map((product) => (
+                        {allProducts.map((product) => (
                             <Product key={product._id} product={product} />
                         ))}
                     </Row>
