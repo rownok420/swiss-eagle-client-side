@@ -1,25 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
+import logo from '../../../images/logo.png'
 
 const Footer = () => {
     const activeStyle = {
         fontWeight: "bold",
-        color: "#FF3614",
+        color: "#00a3c8",
         textDecoration: "underline",
     };
     return (
-        <div style={{ backgroundColor: "#322c29" }} className="text-white">
+        <div style={{ backgroundColor: "#EADEB8" }}>
             <div className="container">
                 <div className="row pt-4 pb-2">
                     <div className="col-12 col-md-6 col-lg-3 mb-4">
-                        {/* <img
+                        <img
                             style={{ height: "45px" }}
                             className="mb-3"
                             src={logo}
                             alt=""
-                        /> */}
-                        <h1>Logo</h1>
+                        />
                         <p>
                             Millions of people of all ages and from around the
                             world are improving their lives with us.We work with
@@ -28,19 +28,19 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3 mb-4">
-                        <h4>Top Services</h4>
-                        <span>End of Life Care</span>
+                        <h4>Top Products</h4>
+                        <span>Edifice Watch</span>
                         <br />
-                        <span>In-Home Health Care</span>
+                        <span>Casio Watch</span>
                         <br />
-                        <span>End of Life Care</span>
+                        <span>Fossil Watch</span>
                         <br />
-                        <span>Transitional Care</span>
+                        <span>Fossil Watch</span>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3 mb-4">
                         <h4>Quic Links</h4>
                         <NavLink
-                            className="text-white text-decoration-none"
+                            className=" text-decoration-none"
                             activeStyle={activeStyle}
                             to="/home"
                         >
@@ -48,7 +48,7 @@ const Footer = () => {
                         </NavLink>
                         <br />
                         <NavLink
-                            className="text-white text-decoration-none"
+                            className=" text-decoration-none"
                             activeStyle={activeStyle}
                             to="/about"
                         >
@@ -56,19 +56,11 @@ const Footer = () => {
                         </NavLink>
                         <br />
                         <NavLink
-                            className="text-white text-decoration-none"
+                            className=" text-decoration-none"
                             activeStyle={activeStyle}
-                            to="/contact"
+                            to="/explore"
                         >
-                            Contact us
-                        </NavLink>
-                        <br />
-                        <NavLink
-                            className="text-white text-decoration-none"
-                            activeStyle={activeStyle}
-                            to="/appointment"
-                        >
-                            Appointment
+                            Explore
                         </NavLink>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3 mb-4">
@@ -78,10 +70,10 @@ const Footer = () => {
                             update & news
                         </p>
                         <div className="d-flex justify-content-around mt-5">
-                            <a href="https://www.facebook.com/">
-                                <i className="fab fa-2x fa-facebook-square text-white"></i>
+                            <a style={{color: "#0f92f3"}} href="https://web.facebook.com/rownok.ritu.1">
+                                <i className="fab fa-2x fa-facebook-square"></i>
                             </a>
-                            <a href="https://www.linkedin.com/signup">
+                            <a href="https://www.linkedin.com/in/md-rownok-jahan/">
                                 <i className="fab fa-2x fa-linkedin text-white"></i>
                             </a>
                             <a href="https://twitter.com/?lang=en">
@@ -99,11 +91,11 @@ const Footer = () => {
                         Copyright &copy; 2021 All rights reserved | This Site
                         Developed by <br />{" "}
                         <span
-                            style={{ color: "#00a3c8" }}
+                            style={{ color: "#FF3614" }}
                             className=" mt-2 d-inline-block"
                         >
                             {" "}
-                            Md. Rownok Jahan Ritu
+                            Md. Rownok Jahan
                         </span>
                     </h5>
                 </div>

@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 import logo from "../../../images/logo.png";
 import useAuth from "../../../Hooks/useAuth";
+import userImg from "../../../images/user.png";
 
 const Header = () => {
     const { user, logOut } = useAuth();
@@ -40,9 +41,11 @@ const Header = () => {
                         <NavLink activeStyle={activeStyle} to="/explore">
                             Explore
                         </NavLink>
-                        <NavLink activeStyle={activeStyle} to="/dashboard">
-                            Dashboard
-                        </NavLink>
+                        {user.email && (
+                            <NavLink activeStyle={activeStyle} to="/dashboard">
+                                Dashboard
+                            </NavLink>
+                        )}
                     </Nav>
 
                     {user.email ? (
@@ -66,17 +69,17 @@ const Header = () => {
                         </div>
                     )}
 
-                    {/* {user?.photoURL && (
+                    {user?.email && (
                         <Navbar.Brand style={{ marginRight: "0px" }}>
                             <img
-                                src={user?.photoURL}
+                                src={user?.photoURL ? user.photoURL : userImg}
                                 width="35"
                                 height="35"
                                 className="d-inline-block align-top rounded-circle m-2 d-none d-lg-block"
                                 alt=""
                             />
                         </Navbar.Brand>
-                    )} */}
+                    )}
 
                     {user?.email && (
                         <Navbar.Brand className="py-0">
