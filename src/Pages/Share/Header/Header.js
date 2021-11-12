@@ -9,7 +9,7 @@ const Header = () => {
     const { user, logOut } = useAuth();
     const activeStyle = {
         fontWeight: "bold",
-        color: "#FF3614",
+        color: "#00a3c8",
     };
     return (
         <Navbar className="nav-style" expand="xl">

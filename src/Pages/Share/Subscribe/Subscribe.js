@@ -8,7 +8,7 @@ const Subscribe = () => {
             <div className="container">
                 <div className="text-center pt-5 pb-4 card-style">
                     <div>
-                        <h1 style={{ color: "#ff7c5b" }}>
+                        <h1 style={{ color: "#00a3c8" }}>
                             Subscribe To Our NewsLetter !
                         </h1>
                     </div>

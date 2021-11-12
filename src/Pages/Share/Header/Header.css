@@ -19,11 +19,11 @@ nav a, .name-style {
 }
 
 nav a:hover{
-    color: #FF3614;
+    color: #00a3c8;
 }
 
 .login-btn{
-    background-color: rgb(244, 199, 11);
+    background-color: #00a3c8;
     color: white;
     border: none;
     padding: 8px 25px;

@@ -12,6 +12,7 @@ import ManageProduct from "../AdminDashboard/ManageProduct/ManageProduct";
 import ManageAllOrders from "../AdminDashboard/ManageAllOrders/ManageAllOrders";
 import useAuth from "../../Hooks/useAuth";
 import Profile from "../UserDashboard/Profile/Profile";
+import AdminRoute from "../Login/AdminRoute/AdminRoute";
 
 const Dashboard = () => {
     const [show, setShow] = useState(false);
@@ -246,18 +247,18 @@ const Dashboard = () => {
                                     <Route path={`${path}/payBill`}>
                                         <PayBill />
                                     </Route>
-                                    <Route path={`${path}/makeAdmin`}>
+                                    <AdminRoute path={`${path}/makeAdmin`}>
                                         <MakeAdmin />
-                                    </Route>
-                                    <Route path={`${path}/addProduct`}>
+                                    </AdminRoute>
+                                    <AdminRoute path={`${path}/addProduct`}>
                                         <AddProduct />
-                                    </Route>
-                                    <Route path={`${path}/manageProduct`}>
+                                    </AdminRoute>
+                                    <AdminRoute path={`${path}/manageProduct`}>
                                         <ManageProduct />
-                                    </Route>
-                                    <Route path={`${path}/manageOrder`}>
+                                    </AdminRoute>
+                                    <AdminRoute path={`${path}/manageOrder`}>
                                         <ManageAllOrders />
-                                    </Route>
+                                    </AdminRoute>
                                 </Switch>
                             </Col>
                         </Row>

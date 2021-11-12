@@ -1,11 +1,11 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Accordion, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../Share/Footer/Footer";
 import Header from "../Share/Header/Header";
 import Subscribe from "../Share/Subscribe/Subscribe";
 import "./About.css";
-import img from '../../images/about2.jpg'
+import img from "../../images/about2.jpg";
 
 const About = () => {
     return (
@@ -42,16 +42,14 @@ const About = () => {
                         <Col xs={12} md={6}>
                             <div className="d-flex justify-content-center align-items-center">
                                 <div className="m-3">
-                                    <div>
+                                    <div className="mb-5">
                                         <h1
                                             style={{
-                                                color: "#ff7c5b",
                                                 lineHeight: "1.1em",
                                             }}
                                             className="hed-color"
                                         >
-                                            We’re Certified & Expert Travel
-                                            Agency
+                                            We’re Certified & Expert Agency
                                         </h1>
                                         <p className="text-muted my-3">
                                             But I must explain to you how all
@@ -60,78 +58,54 @@ const About = () => {
                                             will give
                                         </p>
                                     </div>
-                                    <div>
-                                        <div className="d-flex">
-                                            <div className="d-flex justify-content-center align-items-center me-5">
-                                                <h4
-                                                    style={{
-                                                        backgroundColor:
-                                                            "#00a3c8",
-                                                    }}
-                                                    className="p-2 rounded-circle text-white"
-                                                >
-                                                    01
-                                                </h4>
-                                            </div>
-                                            <div>
-                                                <h3>
+                                    <Accordion defaultActiveKey="0" flush>
+                                        <Accordion.Item eventKey="0">
+                                            <Accordion.Header>
+                                                <h4>
                                                     Professional & Expert Agency
-                                                </h3>
-                                                <p>
-                                                    You’ll work with a care
-                                                    coordinator at your local
-                                                    office to set a care
-                                                    schedule.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="d-flex my-2">
-                                            <div className="d-flex justify-content-center align-items-center me-5">
-                                                <h4
-                                                    style={{
-                                                        backgroundColor:
-                                                            "#00a3c8",
-                                                    }}
-                                                    className="p-2 rounded-circle text-white"
-                                                >
-                                                    02
                                                 </h4>
-                                            </div>
-                                            <div>
-                                                <h3>
+                                            </Accordion.Header>
+                                            <Accordion.Body>
+                                                You’ll work with a care
+                                                coordinator at your local office
+                                                to set a care schedule.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="1">
+                                            <Accordion.Header>
+                                                <h4>
                                                     Quality Servicing Agency
-                                                </h3>
-                                                <p>
-                                                    You’ll work with a care
-                                                    coordinator at your local
-                                                    office to set a care
-                                                    schedule.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="d-flex">
-                                            <div className="d-flex justify-content-center align-items-center me-5">
-                                                <h4
-                                                    style={{
-                                                        backgroundColor:
-                                                            "#00a3c8",
-                                                    }}
-                                                    className="p-2 rounded-circle text-white"
-                                                >
-                                                    03
                                                 </h4>
-                                            </div>
-                                            <div>
-                                                <h3>Awards Winning Company</h3>
-                                                <p>
-                                                    You’ll work with a care
-                                                    coordinator at your local
-                                                    office to set a care
-                                                    schedule.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </Accordion.Header>
+                                            <Accordion.Body>
+                                                Exploring means learning. Bring
+                                                new experiences from each
+                                                journey. Meet different
+                                                cultures, traditions and
+                                                landscapes. Choose your next
+                                                destination and start your
+                                                trip.You’ll work with a care
+                                                coordinator at your local office
+                                                to set a care schedule.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="2">
+                                            <Accordion.Header>
+                                                <h4>Awards Winning Company</h4>
+                                            </Accordion.Header>
+                                            <Accordion.Body>
+                                                You’ll work with a care
+                                                coordinator at your local office
+                                                to set a care schedule.Exploring
+                                                means learning. Bring new
+                                                experiences from each journey.
+                                                Meet different cultures,
+                                                traditions and landscapes.
+                                                Choose your next destination and
+                                                start your trip.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
                                 </div>
                             </div>
                         </Col>
