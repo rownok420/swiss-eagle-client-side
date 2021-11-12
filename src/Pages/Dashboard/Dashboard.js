@@ -13,6 +13,7 @@ import ManageAllOrders from "../AdminDashboard/ManageAllOrders/ManageAllOrders";
 import useAuth from "../../Hooks/useAuth";
 import Profile from "../UserDashboard/Profile/Profile";
 import AdminRoute from "../Login/AdminRoute/AdminRoute";
+import NotFound from "../Dashboard/NotFound/NotFound";
 
 const Dashboard = () => {
     const [show, setShow] = useState(false);
@@ -259,6 +260,9 @@ const Dashboard = () => {
                                     <AdminRoute path={`${path}/manageOrder`}>
                                         <ManageAllOrders />
                                     </AdminRoute>
+                                    <Route exact path="*">
+                                        <NotFound />
+                                    </Route>
                                 </Switch>
                             </Col>
                         </Row>
