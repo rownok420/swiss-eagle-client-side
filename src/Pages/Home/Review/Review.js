@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Card, Container} from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import "./Review.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import userImg from '../../../images/user.png'
+import userImg from "../../../images/user.png";
 import Rating from "../../Share/Rating/Rating";
-
 
 const Review = () => {
     const [ratings, setRatings] = useState();
@@ -54,8 +53,13 @@ const Review = () => {
         ],
     };
     return (
-        <div data-aos="fade-up" data-aos-duration="1000" className="mb-5 top-margin">
-            <Container>
+        <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="py-5 mt-4"
+            style={{backgroundColor: "#f4f7fc"}}
+        >
+            <Container fluid>
                 <div className="text-center hed-color">
                     <h6>MODERN & BEAUTIFUL</h6>
                     <h1 className="mb-5">Customers Review</h1>
@@ -68,8 +72,12 @@ const Review = () => {
                     <div className="container">
                         <Slider {...settings}>
                             {ratings?.map((rating) => (
-                                <Card key={rating._id}  className="h-100 my-3 card-style card-hover-style">
-                                    <div className="card-img-container">
+                                <Card
+                                    style={{ height: "100%" }}
+                                    key={rating._id}
+                                    className="mx-4"
+                                >
+                                    <div>
                                         <Card.Img
                                             style={{
                                                 height: "100px",
@@ -78,21 +86,23 @@ const Review = () => {
                                             }}
                                             className="card-img-style mx-auto my-3"
                                             variant="top"
-                                            src={rating.image ? rating.image : userImg}
+                                            src={
+                                                rating.image
+                                                    ? rating.image
+                                                    : userImg
+                                            }
                                         />
                                     </div>
                                     <Card.Body className="text-center">
                                         <Card.Title className="fs-3">
                                             {rating.name?.slice(0, 26)}
                                         </Card.Title>
-                                        <h5>{rating.address}</h5>
-                                        <Card.Text className="fs-5">
+                                        <h5 className="mb-2">{rating.address}</h5>
+                                        <Rating rating={rating.rating} />
+                                        <Card.Text className="fs-5 mt-3">
                                             {rating.description?.slice(0, 100)}
                                         </Card.Text>
                                     </Card.Body>
-                                    <Card.Footer className="text-center my-3">
-                                        <Rating rating={rating.rating} />
-                                    </Card.Footer>
                                 </Card>
                             ))}
                         </Slider>

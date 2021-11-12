@@ -10,7 +10,7 @@ const Footer = () => {
         textDecoration: "underline",
     };
     return (
-        <div style={{ backgroundColor: "#EADEB8" }}>
+        <div style={{ backgroundColor: "#E8F6EF" }}>
             <div className="container">
                 <div className="row pt-4 pb-2">
                     <div className="col-12 col-md-6 col-lg-3 mb-4">
@@ -73,14 +73,14 @@ const Footer = () => {
                             <a style={{color: "#0f92f3"}} href="https://web.facebook.com/rownok.ritu.1">
                                 <i className="fab fa-2x fa-facebook-square"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/md-rownok-jahan/">
-                                <i className="fab fa-2x fa-linkedin text-white"></i>
+                            <a style={{color: "#0f92f3"}} href="https://www.linkedin.com/in/md-rownok-jahan/">
+                                <i className="fab fa-2x fa-linkedin-in"></i>
                             </a>
-                            <a href="https://twitter.com/?lang=en">
-                                <i className="fab fa-2x fa-twitter-square text-white"></i>
+                            <a style={{color: "#0f92f3"}} href="https://twitter.com/?lang=en">
+                                <i className="fab fa-2x fa-twitter"></i>
                             </a>
-                            <a href="https://www.youtube.com/">
-                                <i className="fab fa-2x fa-youtube text-white"></i>
+                            <a style={{color: "#0f92f3"}} href="https://www.youtube.com/">
+                                <i className="fab fa-2x fa-youtube"></i>
                             </a>
                         </div>
                     </div>

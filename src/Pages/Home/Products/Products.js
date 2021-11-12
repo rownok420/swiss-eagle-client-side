@@ -8,7 +8,7 @@ const Products = () => {
     const [allProducts] = useAllProducts();
 
     return (
-        <div className="mb-5 top-margin">
+        <div className="top-margin">
             <Container>
                 <div className="text-center hed-color">
                     <h6>MODERN & BEAUTIFUL</h6>
