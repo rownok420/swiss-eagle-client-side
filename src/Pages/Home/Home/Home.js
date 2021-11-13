@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import useProducts from '../../../Hooks/useProducts';
 import Footer from '../../Share/Footer/Footer';
@@ -13,6 +13,9 @@ import Review from '../Review/Review';
 const Home = () => {
     const [products] = useProducts();
     
+    useEffect(() => {
+        document.title = 'Swiss Eagle | Your Trusted Partner'
+    }, []);
     if (products.length === 0) {
         return (
             <div
