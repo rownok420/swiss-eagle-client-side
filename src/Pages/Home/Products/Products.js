@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useAllProducts from "../../../Hooks/useAllProducts";
 import Product from "../Product/Product";
 import "./Products.css";
@@ -20,6 +21,11 @@ const Products = () => {
                             <Product key={product._id} product={product} />
                         ))}
                     </Row>
+                </div>
+                <div className="text-center mt-2 mb-5">
+                <Link to="/explore">
+                    <button className="home-button">More Products</button>
+                </Link>
                 </div>
             </Container>
         </div>
