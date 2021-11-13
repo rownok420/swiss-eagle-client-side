@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./AddProduct.css";
 import { useHistory } from "react-router";
@@ -6,9 +6,6 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
-    // useEffect(() => {
-    //     document.title = 'Swiss Eagle : Add service'
-    // }, []);
 
     const history = useHistory();
     const { register, handleSubmit, reset } = useForm();
@@ -42,7 +39,6 @@ const AddProduct = () => {
                     <Container>
                         <div className="text-center">
                             <h1
-                                style={{ color: "#ff7c5b" }}
                                 className="hed-color mb-3"
                             >
                                 Add Your Marvelous Product

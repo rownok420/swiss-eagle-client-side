@@ -22,7 +22,7 @@ const Register = () => {
 
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.from || "/dashboard";
+    const redirect_uri = location.state?.from || "/home";
 
     const handleNameChange = (e) => {
         setName(e.target.value);

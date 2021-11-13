@@ -14,6 +14,7 @@ import useAuth from "../../Hooks/useAuth";
 import Profile from "../UserDashboard/Profile/Profile";
 import AdminRoute from "../Login/AdminRoute/AdminRoute";
 import NotFound from "../Dashboard/NotFound/NotFound";
+import UserRoute from "../Login/UserRoute/UserRoute";
 
 const Dashboard = () => {
     const [show, setShow] = useState(false);
@@ -24,7 +25,7 @@ const Dashboard = () => {
     let { path, url } = useRouteMatch();
 
     useEffect(() => {
-        document.title = 'Swiss Eagle | DashBoard'
+        document.title = "Swiss Eagle | DashBoard";
     }, []);
 
     return (
@@ -39,7 +40,7 @@ const Dashboard = () => {
                         >
                             <i
                                 style={{ color: "#cbba9c" }}
-                                className="fas fa-3x fa-angle-double-right"
+                                className="fas fa-3x fa-bars"
                             ></i>
                         </button>
                         <div>
@@ -48,6 +49,7 @@ const Dashboard = () => {
                     </div>
                 </div>
 
+                {/* offCanvas menu  */}
                 <Offcanvas
                     className="d-none handle-canvas w-50"
                     show={show}
@@ -59,36 +61,39 @@ const Dashboard = () => {
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className="canvas-body text-left">
-                        <div onClick={handleClose} className="d-flex justify-content-start align-items-center">
-                            <i className="fas fa-user-circle me-2"></i>
-                            <NavLink to={`${url}`}>Profile</NavLink>
-                        </div>
-                        <br />
-                        <div
-                            onClick={handleClose}
-                            className="d-flex justify-content-start align-items-center"
-                        >
-                            <i className="fas fa-shopping-basket me-2"></i>
-                            <NavLink to={`${url}/myOrder`}>My Orders</NavLink>
-                        </div>
-                        <br />
-                        <div
-                            onClick={handleClose}
-                            className="d-flex justify-content-start align-items-center"
-                        >
-                            <i className="fas fa-comment me-2"></i>
-                            <NavLink to={`${url}/customerReview`}>
-                                Review
-                            </NavLink>
-                        </div>
-                        <br />
-                        <div
-                            onClick={handleClose}
-                            className="d-flex justify-content-start align-items-center"
-                        >
-                            <i className="fas fa-shopping-cart me-2"></i>
-                            <NavLink to={`${url}/payBill`}>Pay Bill</NavLink>
-                        </div>
+                        {!admin && (
+                            <>
+                                <div
+                                    onClick={handleClose}
+                                    className="d-flex justify-content-start align-items-center"
+                                >
+                                    <i className="fas fa-shopping-basket me-2"></i>
+                                    <NavLink to={`${url}/myOrder`}>
+                                        My Orders
+                                    </NavLink>
+                                </div>
+                                <br />
+                                <div
+                                    onClick={handleClose}
+                                    className="d-flex justify-content-start align-items-center"
+                                >
+                                    <i className="fas fa-comment me-2"></i>
+                                    <NavLink to={`${url}/customerReview`}>
+                                        Review
+                                    </NavLink>
+                                </div>
+                                <br />
+                                <div
+                                    onClick={handleClose}
+                                    className="d-flex justify-content-start align-items-center"
+                                >
+                                    <i className="fas fa-shopping-cart me-2"></i>
+                                    <NavLink to={`${url}/payBill`}>
+                                        Pay Bill
+                                    </NavLink>
+                                </div>{" "}
+                            </>
+                        )}
                         {admin && (
                             <>
                                 <div
@@ -130,14 +135,22 @@ const Dashboard = () => {
                                         Manage All Orders
                                     </NavLink>
                                 </div>
-                                <hr />
                             </>
                         )}
                         <hr />
+                        <div
+                            onClick={handleClose}
+                            className="d-flex justify-content-start align-items-center"
+                        >
+                            <i className="fas fa-user-circle me-2"></i>
+                            <NavLink to={`${url}`}>Profile</NavLink>
+                        </div>
+                        <br />
                         <div className="d-flex justify-content-start align-items-center">
                             <i className="fas fa-home me-2"></i>
                             <NavLink to="/home">Back to home</NavLink>
                         </div>
+                        <br />
                         <div className="d-flex justify-content-start align-items-center">
                             <i className="fas fa-sign-out-alt me-2"></i>
                             <NavLink onClick={logOut} to="/login">
@@ -158,32 +171,32 @@ const Dashboard = () => {
                     <Container fluid>
                         <Row>
                             <Col className="my-col text-left pt-5" lg={2}>
-                                <div className="d-flex justify-content-start align-items-center">
-                                    <i className="fas fa-user-circle me-2"></i>
-                                    <NavLink to={`${url}`}>Profile</NavLink>
-                                </div>
-                                <br />
-                                <div className="d-flex justify-content-start align-items-center">
-                                    <i className="fas fa-shopping-basket me-2"></i>
-                                    <NavLink to={`${url}/myOrder`}>
-                                        My Orders
-                                    </NavLink>
-                                </div>
-                                <br />
-                                <div className="d-flex justify-content-start align-items-center">
-                                    <i className="fas fa-comment me-2"></i>
-                                    <NavLink to={`${url}/customerReview`}>
-                                        Review
-                                    </NavLink>
-                                </div>
-                                <br />
-                                <div className="d-flex justify-content-start align-items-center">
-                                    <i className="fas fa-shopping-cart me-2"></i>
-                                    <NavLink to={`${url}/payBill`}>
-                                        Pay Bill
-                                    </NavLink>
-                                </div>
-                                <hr />
+                                {!admin && (
+                                    <>
+                                        <div className="d-flex justify-content-start align-items-center">
+                                            <i className="fas fa-shopping-basket me-2"></i>
+                                            <NavLink to={`${url}/myOrder`}>
+                                                My Orders
+                                            </NavLink>
+                                        </div>
+                                        <br />
+                                        <div className="d-flex justify-content-start align-items-center">
+                                            <i className="fas fa-comment me-2"></i>
+                                            <NavLink
+                                                to={`${url}/customerReview`}
+                                            >
+                                                Review
+                                            </NavLink>
+                                        </div>
+                                        <br />
+                                        <div className="d-flex justify-content-start align-items-center">
+                                            <i className="fas fa-shopping-cart me-2"></i>
+                                            <NavLink to={`${url}/payBill`}>
+                                                Pay Bill
+                                            </NavLink>
+                                        </div>{" "}
+                                    </>
+                                )}
                                 {admin && (
                                     <>
                                         <div className="d-flex justify-content-start align-items-center">
@@ -215,10 +228,14 @@ const Dashboard = () => {
                                                 Manage All Orders
                                             </NavLink>
                                         </div>
-                                        <hr />
                                     </>
                                 )}
-
+                                <hr />
+                                <div className="d-flex justify-content-start align-items-center">
+                                    <i className="fas fa-user-circle me-2"></i>
+                                    <NavLink to={`${url}`}>Profile</NavLink>
+                                </div>
+                                <br />
                                 <div className="d-flex justify-content-start align-items-center">
                                     <i className="fas fa-home me-2"></i>
                                     <NavLink to="/home">Back to home</NavLink>
@@ -243,15 +260,15 @@ const Dashboard = () => {
                                     <Route exact path={path}>
                                         <Profile />
                                     </Route>
-                                    <Route path={`${path}/myOrder`}>
+                                    <UserRoute path={`${path}/myOrder`}>
                                         <MyOrders />
-                                    </Route>
-                                    <Route path={`${path}/customerReview`}>
+                                    </UserRoute>
+                                    <UserRoute path={`${path}/customerReview`}>
                                         <CustomerReview />
-                                    </Route>
-                                    <Route path={`${path}/payBill`}>
+                                    </UserRoute>
+                                    <UserRoute path={`${path}/payBill`}>
                                         <PayBill />
-                                    </Route>
+                                    </UserRoute>
                                     <AdminRoute path={`${path}/makeAdmin`}>
                                         <MakeAdmin />
                                     </AdminRoute>
