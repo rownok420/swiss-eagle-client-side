@@ -28,6 +28,11 @@ const Dashboard = () => {
         document.title = "Swiss Eagle | DashBoard";
     }, []);
 
+    const activeStyle = {
+        fontWeight: "bold",
+        color: "#00a3c8",
+    };
+
     return (
         <div>
             <div>
@@ -56,7 +61,7 @@ const Dashboard = () => {
                     onHide={handleClose}
                 >
                     <Offcanvas.Header closeButton>
-                        <Offcanvas.Title className="fs-1">
+                        <Offcanvas.Title className="fs-2 hed-color">
                             Dashboard
                         </Offcanvas.Title>
                     </Offcanvas.Header>
@@ -68,7 +73,7 @@ const Dashboard = () => {
                                     className="d-flex justify-content-start align-items-center"
                                 >
                                     <i className="fas fa-shopping-basket me-2"></i>
-                                    <NavLink to={`${url}/myOrder`}>
+                                    <NavLink activeStyle={activeStyle} to={`${url}/myOrder`}>
                                         My Orders
                                     </NavLink>
                                 </div>
@@ -78,7 +83,7 @@ const Dashboard = () => {
                                     className="d-flex justify-content-start align-items-center"
                                 >
                                     <i className="fas fa-comment me-2"></i>
-                                    <NavLink to={`${url}/customerReview`}>
+                                    <NavLink activeStyle={activeStyle} to={`${url}/customerReview`}>
                                         Review
                                     </NavLink>
                                 </div>
@@ -88,7 +93,7 @@ const Dashboard = () => {
                                     className="d-flex justify-content-start align-items-center"
                                 >
                                     <i className="fas fa-shopping-cart me-2"></i>
-                                    <NavLink to={`${url}/payBill`}>
+                                    <NavLink activeStyle={activeStyle} to={`${url}/payBill`}>
                                         Pay Bill
                                     </NavLink>
                                 </div>{" "}
@@ -101,7 +106,7 @@ const Dashboard = () => {
                                     className="d-flex justify-content-start align-items-center"
                                 >
                                     <i className="fas fa-user me-2"></i>
-                                    <NavLink to={`${url}/makeAdmin`}>
+                                    <NavLink activeStyle={activeStyle} to={`${url}/makeAdmin`}>
                                         Make Admin
                                     </NavLink>
                                 </div>
@@ -111,7 +116,7 @@ const Dashboard = () => {
                                     className="d-flex justify-content-start align-items-center"
                                 >
                                     <i className="fas fa-plus me-2"></i>
-                                    <NavLink to={`${url}/addProduct`}>
+                                    <NavLink activeStyle={activeStyle} to={`${url}/addProduct`}>
                                         Add Product
                                     </NavLink>
                                 </div>
@@ -121,7 +126,7 @@ const Dashboard = () => {
                                     className="d-flex justify-content-start align-items-center"
                                 >
                                     <i className="fas fa-clock me-2"></i>
-                                    <NavLink to={`${url}/manageProduct`}>
+                                    <NavLink activeStyle={activeStyle} to={`${url}/manageProduct`}>
                                         Manage All Products
                                     </NavLink>
                                 </div>
@@ -131,7 +136,7 @@ const Dashboard = () => {
                                     className="d-flex justify-content-start align-items-center"
                                 >
                                     <i className="fas fa-cannabis me-2"></i>
-                                    <NavLink to={`${url}/manageOrder`}>
+                                    <NavLink activeStyle={activeStyle} to={`${url}/manageOrder`}>
                                         Manage All Orders
                                     </NavLink>
                                 </div>
@@ -175,7 +180,7 @@ const Dashboard = () => {
                                     <>
                                         <div className="d-flex justify-content-start align-items-center">
                                             <i className="fas fa-shopping-basket me-2"></i>
-                                            <NavLink to={`${url}/myOrder`}>
+                                            <NavLink activeStyle={activeStyle} to={`${url}/myOrder`}>
                                                 My Orders
                                             </NavLink>
                                         </div>
@@ -183,6 +188,7 @@ const Dashboard = () => {
                                         <div className="d-flex justify-content-start align-items-center">
                                             <i className="fas fa-comment me-2"></i>
                                             <NavLink
+                                                activeStyle={activeStyle}
                                                 to={`${url}/customerReview`}
                                             >
                                                 Review
@@ -191,7 +197,7 @@ const Dashboard = () => {
                                         <br />
                                         <div className="d-flex justify-content-start align-items-center">
                                             <i className="fas fa-shopping-cart me-2"></i>
-                                            <NavLink to={`${url}/payBill`}>
+                                            <NavLink activeStyle={activeStyle} to={`${url}/payBill`}>
                                                 Pay Bill
                                             </NavLink>
                                         </div>{" "}
@@ -201,14 +207,14 @@ const Dashboard = () => {
                                     <>
                                         <div className="d-flex justify-content-start align-items-center">
                                             <i className="fas fa-user me-2"></i>
-                                            <NavLink to={`${url}/makeAdmin`}>
+                                            <NavLink activeStyle={activeStyle} to={`${url}/makeAdmin`}>
                                                 Make Admin
                                             </NavLink>
                                         </div>
                                         <br />
                                         <div className="d-flex justify-content-start align-items-center">
                                             <i className="fas fa-plus me-2"></i>
-                                            <NavLink to={`${url}/addProduct`}>
+                                            <NavLink activeStyle={activeStyle} to={`${url}/addProduct`}>
                                                 Add Product
                                             </NavLink>
                                         </div>
@@ -216,6 +222,7 @@ const Dashboard = () => {
                                         <div className="d-flex justify-content-start align-items-center">
                                             <i className="fas fa-clock me-2"></i>
                                             <NavLink
+                                                activeStyle={activeStyle}
                                                 to={`${url}/manageProduct`}
                                             >
                                                 Manage All Products
@@ -224,7 +231,7 @@ const Dashboard = () => {
                                         <br />
                                         <div className="d-flex justify-content-start align-items-center">
                                             <i className="fas fa-cannabis me-2"></i>
-                                            <NavLink to={`${url}/manageOrder`}>
+                                            <NavLink activeStyle={activeStyle} to={`${url}/manageOrder`}>
                                                 Manage All Orders
                                             </NavLink>
                                         </div>

@@ -6,6 +6,7 @@ import Header from "../Share/Header/Header";
 import Subscribe from "../Share/Subscribe/Subscribe";
 import "./About.css";
 import img from "../../images/about2.jpg";
+import Review from "../Home/Review/Review";
 
 const About = () => {
     useEffect(() => {
@@ -114,6 +115,7 @@ const About = () => {
                             </div>
                         </Col>
                     </Row>
+                    <Review />
                     <Subscribe />
                 </Container>
             </div>

@@ -9,7 +9,6 @@
 }
 
 .my-col {
-    /* background-color: #f7f7f7; */
     height: 100vh;
 }
 
@@ -25,21 +24,25 @@
     transition: 0.1s;
 }
 
+.canvas-body i, .my-col i{
+    color: #00a3c8;
+}
+
 .my-col a:hover {
-    color: #ff3614;
+    color: #00a3c8;
 }
 
-.canvas-body a:hover {
-    color: #ff3614;
+.canvas-body a:hover{
+    color: #00a3c8;
 }
 
-.my-col a:focus {
+/* .my-col a:focus {
     color: #ff3614;
 }
 
 .canvas-body a:focus {
     color: #ff3614;
-}
+} */
 
 @media only screen and (max-width: 999px) {
     .my-col {
