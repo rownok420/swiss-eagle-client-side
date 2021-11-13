@@ -16,11 +16,8 @@ const Profile = () => {
             <div>
                 <Container>
                     <Row>
-                        <Col xs={12} md={4}>
-                            <div></div>
-                        </Col>
-                        <Col xs={12} md={4}>
-                            <Card className="h-100 my-3 h-100 card-style card-hover-style">
+                        <Col>
+                            <Card className="h-100 my-3 h-100 card-style card-hover-style profile-card  pt-4 w-50 mx-auto">
                                 <div className="card-img-container">
                                     <Card.Img
                                         style={{
@@ -43,9 +40,6 @@ const Profile = () => {
                                     <button onClick={logOut} className="home-button mb-3">Logout</button>
                                 </Card.Footer>
                             </Card>
-                        </Col>
-                        <Col xs={12} md={4}>
-                            <div></div>
                         </Col>
                     </Row>
                 </Container>

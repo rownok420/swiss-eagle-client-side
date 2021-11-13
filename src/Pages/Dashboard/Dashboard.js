@@ -56,7 +56,7 @@ const Dashboard = () => {
 
                 {/* offCanvas menu  */}
                 <Offcanvas
-                    className="d-none handle-canvas w-50"
+                    className="d-none handle-canvas w-75"
                     show={show}
                     onHide={handleClose}
                 >
@@ -260,7 +260,7 @@ const Dashboard = () => {
                                 lg={10}
                                 style={{
                                     backgroundColor: "#f4f7fc",
-                                    height: "100vh",
+                                    minHeight: "100vh",
                                 }}
                             >
                                 <Switch>
