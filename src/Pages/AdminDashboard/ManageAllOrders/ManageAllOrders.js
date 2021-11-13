@@ -146,10 +146,7 @@ const ManageAllOrders = () => {
                                             onClick={() =>
                                                 handleDeleteOrder(order?._id)
                                             }
-                                            style={{
-                                                backgroundColor: "#FF3614",
-                                            }}
-                                            className="home-button  mb-2 w-100"
+                                            className="home-button bg-warning  mb-2 w-100"
                                         >
                                             Delete Order
                                         </button>

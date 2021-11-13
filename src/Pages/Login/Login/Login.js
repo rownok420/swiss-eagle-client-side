@@ -32,11 +32,11 @@ const Login = () => {
                 // console.log(user);
                 setError("");
                 history.push(redirect_uri);
-                Swal.fire("Good job!", "successfully Registered!", "success");
+                Swal.fire("Good job!", "successfully Login!", "success");
             })
             .catch((error) => {
                 setError(error.message);
-                Swal.fire("Something Went Wrong", "success");
+                Swal.fire("Something Went Wrong", "Wrong");
             })
             .finally(() => setIsLoading(false));
     };

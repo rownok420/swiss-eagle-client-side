@@ -114,10 +114,7 @@ const MyOrders = () => {
                                             onClick={() =>
                                                 handleDeleteOrder(product?._id)
                                             }
-                                            style={{
-                                                backgroundColor: "#FF3614",
-                                            }}
-                                            className="home-button mb-2"
+                                            className="home-button bg-warning mb-2"
                                         >
                                             Cancel Order
                                         </button>

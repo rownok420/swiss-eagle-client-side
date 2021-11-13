@@ -69,7 +69,7 @@ const Register = () => {
             })
             .catch((err) => {
                 setError(err.message);
-                Swal.fire("Something Went Wrong", "success");
+                Swal.fire("Something Went Wrong", "Wrong");
             })
             .finally(() => setIsLoading(false));
     };
