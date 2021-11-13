@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 
 const Login = () => {
@@ -31,9 +32,11 @@ const Login = () => {
                 // console.log(user);
                 setError("");
                 history.push(redirect_uri);
+                Swal.fire("Good job!", "successfully Registered!", "success");
             })
             .catch((error) => {
                 setError(error.message);
+                Swal.fire("Something Went Wrong", "success");
             })
             .finally(() => setIsLoading(false));
     };
@@ -44,10 +47,11 @@ const Login = () => {
             .then((result) => {
                 // console.log(result.user);
                 history.push(redirect_uri);
+                Swal.fire("Good job!", "successfully Registered!", "success");
             })
             .catch((err) => {
                 setError(err.message);
-                console.log(err.message);
+                Swal.fire("Something Went Wrong", "success");
             })
             .finally(() => setIsLoading(false));
     };
@@ -115,9 +119,12 @@ const Login = () => {
                                                     textDecoration: "none",
                                                 }}
                                             >
-                                                <p className="text-center" style={{ color: "#00a3c8" }}>
-                                                    Don't have any
-                                                    account? Register Now
+                                                <p
+                                                    className="text-center"
+                                                    style={{ color: "#00a3c8" }}
+                                                >
+                                                    Don't have any account?
+                                                    Register Now
                                                 </p>
                                             </Link>
                                         </Form.Group>

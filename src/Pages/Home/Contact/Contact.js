@@ -26,8 +26,7 @@ const Contact = () => {
                                 <div>
                                     <div>
                                         <h3
-                                            style={{ color: "#ff7c5b" }}
-                                            className=" mt-3 text-center"
+                                            className=" mt-3 text-center hed-color"
                                         >
                                             Get In Touch
                                         </h3>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 import "./Register.css";
 
@@ -47,9 +48,11 @@ const Register = () => {
                 setError("");
                 setUserName(name);
                 history.push(redirect_uri);
+                Swal.fire("Good job!", "successfully Registered!", "success");
             })
             .catch((error) => {
                 setError(error.message);
+                Swal.fire("Something Went Wrong", "success");
             })
             .finally(() => setIsLoading(false));
     };
@@ -62,10 +65,11 @@ const Register = () => {
                 saveUser(result.user.email, result.user.displayName, "PUT");
                 setError("");
                 history.push(redirect_uri);
+                Swal.fire("Good job!", "successfully Registered!", "success");
             })
             .catch((err) => {
                 setError(err.message);
-                console.log(err.message);
+                Swal.fire("Something Went Wrong", "success");
             })
             .finally(() => setIsLoading(false));
     };
@@ -162,7 +166,10 @@ const Register = () => {
                                                     textDecoration: "none",
                                                 }}
                                             >
-                                                <p className="text-center" style={{ color: "#00a3c8" }}>
+                                                <p
+                                                    className="text-center"
+                                                    style={{ color: "#00a3c8" }}
+                                                >
                                                     Already have an account?
                                                     Login Now
                                                 </p>
