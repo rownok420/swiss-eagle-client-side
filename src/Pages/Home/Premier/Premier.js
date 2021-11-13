@@ -53,7 +53,7 @@ const Premier = () => {
                                 <div>
                                     <Link to="/explore">
                                         <button className="home-button">
-                                            Explore
+                                            Explore <i className="fas fa-sign-out-alt ps-2"></i>
                                         </button>
                                     </Link>
                                 </div>

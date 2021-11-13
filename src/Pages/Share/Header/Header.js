@@ -13,7 +13,7 @@ const Header = () => {
         color: "#00a3c8",
     };
     return (
-        <Navbar className="nav-style" expand="xl">
+        <Navbar className="nav-style sticky-top" expand="xl">
             <Container fluid>
                 <Navbar.Brand>
                     <NavLink to="/">

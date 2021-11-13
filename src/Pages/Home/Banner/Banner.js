@@ -17,7 +17,7 @@ const Banner = () => {
                     </p>
                     <Link to="/explore">
                         <button className="home-button">
-                            <i className="fas fa-user pe-2"></i>Explore
+                            Explore <i className="fas fa-sign-out-alt ps-2"></i>
                         </button>
                     </Link>
                 </div>

@@ -7,6 +7,7 @@ import Subscribe from "../Share/Subscribe/Subscribe";
 import "./About.css";
 import img from "../../images/about2.jpg";
 import Review from "../Home/Review/Review";
+import ScrollToTop from "../Share/ScrollToTop/ScrollToTop";
 
 const About = () => {
     useEffect(() => {
@@ -15,6 +16,7 @@ const About = () => {
 
     return (
         <div>
+            <ScrollToTop />
             <Header />
             <div className="text-center">
                 <div className="about-background">

@@ -3,6 +3,7 @@ import { Spinner } from 'react-bootstrap';
 import useProducts from '../../../Hooks/useProducts';
 import Footer from '../../Share/Footer/Footer';
 import Header from '../../Share/Header/Header';
+import ScrollToTop from '../../Share/ScrollToTop/ScrollToTop';
 import Banner from '../Banner/Banner';
 import Brand from '../Brand/Brand';
 import Contact from '../Contact/Contact';
@@ -28,6 +29,7 @@ const Home = () => {
     }
     return (
         <div>
+            <ScrollToTop />
             <Header />
             <Banner />
             <Premier />

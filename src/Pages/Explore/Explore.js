@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import Footer from "../Share/Footer/Footer";
 import Header from "../Share/Header/Header";
+import ScrollToTop from "../Share/ScrollToTop/ScrollToTop";
 import Subscribe from "../Share/Subscribe/Subscribe";
 import "./Explore.css";
 import ExploreCard from "./ExploreCard/ExploreCard";
@@ -27,6 +28,7 @@ const Explore = () => {
     }
     return (
         <div>
+            <ScrollToTop />
             <Header />
             <div className="text-center">
                 <div className="background">

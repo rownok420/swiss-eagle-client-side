@@ -3,6 +3,7 @@
 }
 
 .nav-style{
+    background-color: white !important;
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
     padding: 25px 0px;
     overflow: hidden;

@@ -24,7 +24,7 @@ const Products = () => {
                 </div>
                 <div className="text-center mt-2 mb-5">
                 <Link to="/explore">
-                    <button className="home-button">More Products</button>
+                    <button className="home-button">More Products <i className="fas fa-sign-out-alt ps-2"></i></button>
                 </Link>
                 </div>
             </Container>
